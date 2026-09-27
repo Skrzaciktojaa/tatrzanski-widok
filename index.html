@@ -9,7 +9,10 @@
     <!-- CZCIONKA MARGARINE -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Margarine&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Margarine&display=swap"
+        rel="stylesheet"
+    >
 
     <style>
 
@@ -45,16 +48,23 @@
         }
 
 
-        /* LOGO */
+        /* =========================
+           LOGO
+        ========================= */
 
         .logo {
-            font-size: 28px;
-            font-weight: bold;
-            color: #7b1e16;
+            width: 230px;
+            height: auto;
+
+            display: block;
+
+            object-fit: contain;
         }
 
 
-        /* MENU */
+        /* =========================
+           MENU
+        ========================= */
 
         nav {
             display: flex;
@@ -220,7 +230,7 @@
 
 
             .logo {
-                font-size: 21px;
+                width: 150px;
             }
 
 
@@ -268,10 +278,16 @@
 
     <header>
 
-        <div class="logo">
-            TWOJE LOGO
-        </div>
+        <!-- LOGO -->
 
+        <img
+            class="logo"
+            src="images/logo.png"
+            alt="Tatrzański Widok"
+        >
+
+
+        <!-- MENU -->
 
         <nav>
 
