@@ -295,6 +295,41 @@
         }
 
         /* =========================
+           MAPA NOWEGO TARGU
+        ========================= */
+
+        .map-section {
+            padding: 90px 8% 100px;
+            background: white;
+        }
+
+        .map-section h2 {
+            font-family: "Margarine", sans-serif;
+            font-size: 42px;
+            font-weight: normal;
+            text-align: center;
+            color: #222;
+            margin: 0 0 50px;
+        }
+
+        .map-container {
+            width: 100%;
+            max-width: 1200px;
+            height: 500px;
+            margin: 0 auto;
+            overflow: hidden;
+            border-radius: 18px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+        }
+
+        .map-container iframe {
+            width: 100%;
+            height: 100%;
+            border: 0;
+            display: block;
+        }
+
+        /* =========================
            KONTAKT - TŁO
         ========================= */
 
@@ -500,6 +535,7 @@
         ========================= */
 
         @media (max-width: 800px) {
+
             .area-grid {
                 grid-template-columns: 1fr;
             }
@@ -507,9 +543,18 @@
             .area-card {
                 height: 280px;
             }
+
+            .map-section {
+                padding: 70px 7% 80px;
+            }
+
+            .map-container {
+                height: 400px;
+            }
         }
 
         @media (max-width: 700px) {
+
             header {
                 height: 80px;
                 padding: 0 4%;
@@ -574,6 +619,16 @@
                 height: 270px;
             }
 
+            .map-section h2 {
+                font-size: 32px;
+                margin-bottom: 35px;
+            }
+
+            .map-container {
+                height: 350px;
+                border-radius: 14px;
+            }
+
             .contact-box {
                 padding: 45px 25px;
             }
@@ -591,26 +646,44 @@
 
 <body>
 
+    <!-- =========================
+         HEADER
+    ========================= -->
+
     <header>
 
         <div class="logo-box">
+
             <img
                 class="logo"
                 src="images/logo.png"
                 alt="Tatrzański Widok"
             >
+
         </div>
 
         <div class="nav-box">
+
             <nav>
-                <a href="#okolica">OKOLICA</a>
-                <a href="#kontakt">KONTAKT</a>
+
+                <a href="#okolica">
+                    OKOLICA
+                </a>
+
+                <a href="#kontakt">
+                    KONTAKT
+                </a>
+
             </nav>
+
         </div>
 
     </header>
 
-    <!-- HERO -->
+
+    <!-- =========================
+         HERO
+    ========================= -->
 
     <section class="hero">
 
@@ -634,7 +707,9 @@
     </section>
 
 
-    <!-- O NAS -->
+    <!-- =========================
+         O NAS
+    ========================= -->
 
     <section class="about">
 
@@ -654,7 +729,9 @@
     </section>
 
 
-    <!-- OKOLICA -->
+    <!-- =========================
+         OKOLICA
+    ========================= -->
 
     <section class="area" id="okolica">
 
@@ -664,7 +741,10 @@
 
         <div class="area-grid">
 
+            <!-- TATRY -->
+
             <a class="area-card" href="#">
+
                 <img
                     src="images/tatry.jpg"
                     alt="Tatry"
@@ -682,10 +762,14 @@
                     </p>
 
                 </div>
+
             </a>
 
 
+            <!-- ZAKOPANE -->
+
             <a class="area-card" href="#">
+
                 <img
                     src="images/zakopane.jpeg"
                     alt="Zakopane"
@@ -703,10 +787,14 @@
                     </p>
 
                 </div>
+
             </a>
 
 
+            <!-- TERMY -->
+
             <a class="area-card" href="#">
+
                 <img
                     src="images/termy.jpg"
                     alt="Termy"
@@ -724,10 +812,14 @@
                     </p>
 
                 </div>
+
             </a>
 
 
+            <!-- MORSKIE OKO -->
+
             <a class="area-card" href="#">
+
                 <img
                     src="images/morskie-oko.jpg"
                     alt="Morskie Oko"
@@ -745,10 +837,14 @@
                     </p>
 
                 </div>
+
             </a>
 
 
+            <!-- DOLINA KOŚCIELISKA -->
+
             <a class="area-card" href="#">
+
                 <img
                     src="images/dolina-koscieliska.jpg"
                     alt="Dolina Kościeliska"
@@ -766,10 +862,14 @@
                     </p>
 
                 </div>
+
             </a>
 
 
+            <!-- NOWY TARG -->
+
             <a class="area-card" href="#">
+
                 <img
                     src="images/nowy-targ.jpeg"
                     alt="Nowy Targ"
@@ -787,6 +887,7 @@
                     </p>
 
                 </div>
+
             </a>
 
         </div>
@@ -794,7 +895,33 @@
     </section>
 
 
-    <!-- KONTAKT -->
+    <!-- =========================
+         MAPA NOWEGO TARGU
+    ========================= -->
+
+    <section class="map-section">
+
+        <h2>
+            Nowy Targ
+        </h2>
+
+        <div class="map-container">
+
+            <iframe
+                src="https://www.google.com/maps?q=Nowy+Targ,+Polska&output=embed"
+                allowfullscreen=""
+                loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade">
+            </iframe>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         KONTAKT
+    ========================= -->
 
     <div
         class="contact-modal"
@@ -833,6 +960,7 @@
                     </p>
 
                 </div>
+
 
                 <div class="contact-item">
 
