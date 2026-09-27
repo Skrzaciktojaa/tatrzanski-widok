@@ -6,16 +6,19 @@
 
     <title>Tatrzański widok</title>
 
-    <!-- Google Font -->
+    <!-- Margarine -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
     <link
         href="https://fonts.googleapis.com/css2?family=Margarine&display=swap"
         rel="stylesheet"
     >
 
     <style>
+
+        /* =========================
+           PODSTAWY
+        ========================= */
 
         * {
             box-sizing: border-box;
@@ -36,49 +39,46 @@
 
         header {
             position: absolute;
-
             top: 0;
             left: 0;
 
             width: 100%;
             height: 100px;
 
+            padding: 0 6%;
+
             display: flex;
             align-items: center;
             justify-content: space-between;
 
-            padding: 0 6%;
-
             background: transparent;
 
-            z-index: 10;
+            z-index: 20;
         }
 
 
         /* =========================
-           RAMKA LOGO
+           RAMKA LOGA
         ========================= */
 
         .logo-box {
-
             padding: 8px 18px;
 
-            border: 1px solid rgba(255, 255, 255, 0.45);
+            border: 1px solid rgba(255, 255, 255, 0.55);
 
-            background: rgba(80, 80, 80, 0.18);
+            background: rgba(255, 255, 255, 0.14);
 
             backdrop-filter: blur(8px);
             -webkit-backdrop-filter: blur(8px);
 
-            border-radius: 6px;
+            border-radius: 7px;
 
             box-shadow:
-                0 2px 8px rgba(0, 0, 0, 0.15);
+                0 2px 10px rgba(0, 0, 0, 0.12);
         }
 
 
         .logo {
-
             width: 230px;
             height: auto;
 
@@ -98,39 +98,36 @@
         ========================= */
 
         .nav-box {
-
             padding: 12px 20px;
 
-            border: 1px solid rgba(255, 255, 255, 0.45);
+            border: 1px solid rgba(255, 255, 255, 0.55);
 
-            background: rgba(80, 80, 80, 0.18);
+            background: rgba(255, 255, 255, 0.14);
 
             backdrop-filter: blur(8px);
             -webkit-backdrop-filter: blur(8px);
 
-            border-radius: 6px;
+            border-radius: 7px;
 
             box-shadow:
-                0 2px 8px rgba(0, 0, 0, 0.15);
+                0 2px 10px rgba(0, 0, 0, 0.12);
         }
 
 
         nav {
-
             display: flex;
+            align-items: center;
 
             gap: 35px;
         }
 
 
         nav a {
-
             color: white;
 
             text-decoration: none;
 
             font-size: 16px;
-
             font-weight: bold;
 
             text-shadow:
@@ -142,7 +139,6 @@
 
 
         nav a:hover {
-
             opacity: 0.7;
         }
 
@@ -152,11 +148,9 @@
         ========================= */
 
         .hero {
-
             position: relative;
 
             width: 100%;
-
             height: 520px;
 
             overflow: hidden;
@@ -164,19 +158,18 @@
 
 
         .hero img {
-
             width: 100%;
             height: 100%;
+
+            display: block;
 
             object-fit: cover;
 
             /*
-             * Przesuwamy zdjęcie trochę w dół,
-             * żeby było mniej nieba.
-             */
-            object-position: center 75%;
-
-            display: block;
+               Zdjęcie przesunięte w dół,
+               żeby było mniej nieba.
+            */
+            object-position: center 85%;
         }
 
 
@@ -185,7 +178,6 @@
         ========================= */
 
         .arrow {
-
             position: absolute;
 
             top: 50%;
@@ -193,21 +185,25 @@
             transform:
                 translateY(-50%);
 
-            background: transparent;
+            width: auto;
+            height: auto;
+
+            padding: 15px 20px;
 
             border: none;
 
-            color: white;
+            background: transparent;
 
-            font-size: 60px;
+            color: white;
 
             font-family: Arial, sans-serif;
 
+            font-size: 60px;
+            line-height: 1;
+
             cursor: pointer;
 
-            padding: 20px;
-
-            z-index: 5;
+            z-index: 10;
 
             text-shadow:
                 0 2px 8px rgba(0, 0, 0, 0.7);
@@ -219,19 +215,16 @@
 
 
         .arrow.left {
-
             left: 5px;
         }
 
 
         .arrow.right {
-
             right: 5px;
         }
 
 
         .arrow:hover {
-
             opacity: 0.7;
 
             transform:
@@ -241,11 +234,10 @@
 
 
         /* =========================
-           NAPIS NA BANERZE
+           NAPIS
         ========================= */
 
         .hero-title {
-
             position: absolute;
 
             top: 50%;
@@ -254,11 +246,11 @@
             transform:
                 translate(-50%, -50%);
 
+            z-index: 8;
+
             color: white;
 
             text-align: center;
-
-            z-index: 3;
 
             white-space: nowrap;
 
@@ -268,7 +260,6 @@
 
 
         .hero-title .title {
-
             font-family:
                 "Margarine",
                 sans-serif;
@@ -278,13 +269,10 @@
             font-weight: normal;
 
             margin-bottom: 8px;
-
-            text-align: center;
         }
 
 
         .hero-title .subtitle {
-
             font-family:
                 "Margarine",
                 sans-serif !important;
@@ -292,8 +280,6 @@
             font-size: 25px;
 
             font-weight: normal;
-
-            text-align: center;
         }
 
 
@@ -304,7 +290,6 @@
         @media (max-width: 700px) {
 
             header {
-
                 height: 80px;
 
                 padding: 0 4%;
@@ -312,55 +297,51 @@
 
 
             .logo-box {
-
                 padding: 6px 10px;
             }
 
 
             .logo {
-
                 width: 145px;
             }
 
 
             .nav-box {
-
                 padding: 8px 12px;
             }
 
 
             nav {
-
                 gap: 12px;
             }
 
 
             nav a {
-
                 font-size: 11px;
             }
 
 
             .hero {
-
                 height: 400px;
             }
 
 
-            .hero-title .title {
+            .hero img {
+                object-position: center 85%;
+            }
 
+
+            .hero-title .title {
                 font-size: 34px;
             }
 
 
             .hero-title .subtitle {
-
                 font-size: 19px;
             }
 
 
             .arrow {
-
                 font-size: 45px;
 
                 padding: 10px;
@@ -379,7 +360,6 @@
     ========================= -->
 
     <header>
-
 
         <!-- LOGO -->
 
@@ -412,7 +392,6 @@
 
         </div>
 
-
     </header>
 
 
@@ -423,7 +402,6 @@
 
     <section class="hero">
 
-
         <img
             id="heroImage"
             src="images/widok.jpeg"
@@ -431,7 +409,7 @@
         >
 
 
-        <!-- LEWA STRZAŁKA -->
+        <!-- LEWO -->
 
         <button
             class="arrow left"
@@ -442,7 +420,7 @@
         </button>
 
 
-        <!-- PRAWA STRZAŁKA -->
+        <!-- PRAWO -->
 
         <button
             class="arrow right"
@@ -467,7 +445,6 @@
 
         </div>
 
-
     </section>
 
 
@@ -479,15 +456,10 @@
     <script>
 
         const images = [
-
             "images/widok.jpeg",
-
             "images/panorama.png",
-
             "images/budynek.png",
-
             "images/park.png"
-
         ];
 
 
@@ -503,9 +475,7 @@
             currentImage++;
 
             if (currentImage >= images.length) {
-
                 currentImage = 0;
-
             }
 
             heroImage.src =
@@ -518,10 +488,8 @@
             currentImage--;
 
             if (currentImage < 0) {
-
                 currentImage =
                     images.length - 1;
-
             }
 
             heroImage.src =
@@ -529,7 +497,6 @@
         }
 
     </script>
-
 
 </body>
 </html>
