@@ -45,13 +45,13 @@
             left: 0;
 
             width: 100%;
-            height: 105px;
+            height: 90px;
 
             display: flex;
-            align-items: flex-start;
+            align-items: center;
             justify-content: space-between;
 
-            padding: 10px 6% 0;
+            padding: 0 6%;
 
             background: transparent;
 
@@ -60,29 +60,8 @@
 
 
         /* =========================
-           RAMKA LOGO
+           LOGO
         ========================= */
-
-        .logo-box {
-            height: 90px;
-            min-width: 280px;
-
-            display: flex;
-            align-items: center;
-
-            padding: 0 25px;
-
-            border: 2px solid rgba(255, 255, 255, 0.9);
-            border-radius: 8px;
-
-            background: rgba(60, 60, 60, 0.35);
-
-            backdrop-filter: blur(4px);
-            -webkit-backdrop-filter: blur(4px);
-        }
-
-
-        /* LOGO */
 
         .logo {
             width: 230px;
@@ -91,30 +70,11 @@
             display: block;
 
             object-fit: contain;
-        }
 
-
-        /* =========================
-           RAMKA MENU
-        ========================= */
-
-        .nav-box {
-            height: 65px;
-
-            display: flex;
-            align-items: center;
-
-            padding: 0 25px;
-
-            border: 2px solid rgba(255, 255, 255, 0.9);
-            border-radius: 8px;
-
-            background: rgba(60, 60, 60, 0.35);
-
-            backdrop-filter: blur(4px);
-            -webkit-backdrop-filter: blur(4px);
-
-            margin-top: 0;
+            /* lekki cień, żeby logo było widoczne */
+            filter: drop-shadow(
+                0 1px 4px rgba(0, 0, 0, 0.45)
+            );
         }
 
 
@@ -138,7 +98,7 @@
             font-weight: bold;
 
             text-shadow:
-                0 1px 5px rgba(0, 0, 0, 0.8);
+                0 2px 6px rgba(0, 0, 0, 0.75);
 
             transition:
                 opacity 0.2s ease;
@@ -292,30 +252,14 @@
         @media (max-width: 700px) {
 
             header {
-                height: 80px;
+                height: 75px;
 
-                padding: 5px 4% 0;
-            }
-
-
-            .logo-box {
-                height: 65px;
-
-                min-width: 0;
-
-                padding: 0 12px;
+                padding: 0 4%;
             }
 
 
             .logo {
                 width: 145px;
-            }
-
-
-            .nav-box {
-                height: 55px;
-
-                padding: 0 12px;
             }
 
 
@@ -365,38 +309,28 @@
 
     <header>
 
-
         <!-- LOGO -->
 
-        <div class="logo-box">
-
-            <img
-                class="logo"
-                src="images/logo.png"
-                alt="Tatrzański Widok"
-            >
-
-        </div>
+        <img
+            class="logo"
+            src="images/logo.png"
+            alt="Tatrzański Widok"
+        >
 
 
         <!-- MENU -->
 
-        <div class="nav-box">
+        <nav>
 
-            <nav>
+            <a href="#">
+                OKOLICA
+            </a>
 
-                <a href="#">
-                    OKOLICA
-                </a>
+            <a href="#">
+                KONTAKT
+            </a>
 
-                <a href="#">
-                    KONTAKT
-                </a>
-
-            </nav>
-
-        </div>
-
+        </nav>
 
     </header>
 
