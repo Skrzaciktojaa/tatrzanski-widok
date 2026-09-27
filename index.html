@@ -154,68 +154,9 @@
 
             display: block;
 
-            /*
-             * Zdjęcie wypełnia cały baner,
-             * ale pozostaje ustawione centralnie.
-             */
             object-fit: cover;
 
             object-position: center center;
-        }
-
-
-        /* =========================
-           STRZAŁKI
-        ========================= */
-
-        .arrow {
-            position: absolute;
-
-            top: 50%;
-
-            transform: translateY(-50%);
-
-            padding: 15px 20px;
-
-            border: none;
-            background: transparent;
-
-            color: white;
-
-            font-family: Arial, sans-serif;
-
-            font-size: 60px;
-            line-height: 1;
-
-            cursor: pointer;
-
-            z-index: 10;
-
-            text-shadow:
-                0 2px 8px rgba(0, 0, 0, 0.7);
-
-            transition:
-                opacity 0.2s ease,
-                transform 0.2s ease;
-        }
-
-
-        .arrow.left {
-            left: 5px;
-        }
-
-
-        .arrow.right {
-            right: 5px;
-        }
-
-
-        .arrow:hover {
-            opacity: 0.7;
-
-            transform:
-                translateY(-50%)
-                scale(1.08);
         }
 
 
@@ -322,12 +263,6 @@
                 font-size: 19px;
             }
 
-
-            .arrow {
-                font-size: 45px;
-
-                padding: 10px;
-            }
         }
 
     </style>
@@ -380,32 +315,9 @@
     <section class="hero">
 
         <img
-            id="heroImage"
             src="images/panorama.png"
             alt="Tatrzański widok"
         >
-
-
-        <!-- LEWA STRZAŁKA -->
-
-        <button
-            class="arrow left"
-            onclick="previousImage()"
-            aria-label="Poprzednie zdjęcie"
-        >
-            ‹
-        </button>
-
-
-        <!-- PRAWA STRZAŁKA -->
-
-        <button
-            class="arrow right"
-            onclick="nextImage()"
-            aria-label="Następne zdjęcie"
-        >
-            ›
-        </button>
 
 
         <!-- NAPIS -->
@@ -424,54 +336,6 @@
 
     </section>
 
-
-    <!-- =========================
-         SLIDER
-    ========================= -->
-
-    <script>
-
-        const images = [
-            "images/panorama.png",
-            "images/budynek.png",
-            "images/park.png"
-        ];
-
-
-        let currentImage = 0;
-
-
-        const heroImage =
-            document.getElementById("heroImage");
-
-
-        function nextImage() {
-
-            currentImage++;
-
-            if (currentImage >= images.length) {
-                currentImage = 0;
-            }
-
-            heroImage.src =
-                images[currentImage];
-        }
-
-
-        function previousImage() {
-
-            currentImage--;
-
-            if (currentImage < 0) {
-                currentImage =
-                    images.length - 1;
-            }
-
-            heroImage.src =
-                images[currentImage];
-        }
-
-    </script>
 
 </body>
 </html>
