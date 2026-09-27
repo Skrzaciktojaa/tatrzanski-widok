@@ -38,7 +38,6 @@
             left: 0;
             width: 100%;
             height: 100px;
-
             padding: 0 6%;
 
             display: flex;
@@ -51,12 +50,9 @@
 
         .logo-box {
             padding: 8px 18px;
-
             background: rgba(255, 255, 255, 0.16);
-
             backdrop-filter: blur(10px);
             -webkit-backdrop-filter: blur(10px);
-
             border-radius: 8px;
             border: none;
         }
@@ -65,18 +61,14 @@
             width: 230px;
             height: auto;
             display: block;
-
             filter: drop-shadow(0 2px 5px rgba(0, 0, 0, 0.45));
         }
 
         .nav-box {
             padding: 12px 20px;
-
             background: rgba(255, 255, 255, 0.16);
-
             backdrop-filter: blur(10px);
             -webkit-backdrop-filter: blur(10px);
-
             border-radius: 8px;
             border: none;
         }
@@ -90,12 +82,9 @@
         nav a {
             color: white;
             text-decoration: none;
-
             font-size: 16px;
             font-weight: bold;
-
             text-shadow: 0 2px 6px rgba(0, 0, 0, 0.75);
-
             transition: opacity 0.2s ease;
         }
 
@@ -109,29 +98,23 @@
 
         .hero {
             position: relative;
-
             width: 100%;
             height: 520px;
-
             overflow: hidden;
         }
 
         .hero img {
             width: 100%;
             height: 100%;
-
             display: block;
-
             object-fit: cover;
             object-position: center center;
         }
 
         .hero-title {
             position: absolute;
-
             top: 50%;
             left: 50%;
-
             transform: translate(-50%, -50%);
 
             z-index: 8;
@@ -145,16 +128,13 @@
 
         .hero-title .title {
             font-family: "Margarine", sans-serif;
-
             font-size: 52px;
             font-weight: normal;
-
             margin-bottom: 8px;
         }
 
         .hero-title .subtitle {
             font-family: "Margarine", sans-serif !important;
-
             font-size: 25px;
             font-weight: normal;
         }
@@ -165,33 +145,24 @@
 
         .about {
             padding: 90px 15% 100px;
-
             background: white;
-
             text-align: center;
         }
 
         .about h2 {
             font-family: "Margarine", sans-serif;
-
             font-size: 42px;
             font-weight: normal;
-
             margin: 0 0 60px;
-
             color: #222;
         }
 
         .about p {
             max-width: 950px;
-
             margin: 0 auto;
-
             font-family: Georgia, serif;
-
             font-size: 21px;
             line-height: 1.9;
-
             color: #333;
         }
 
@@ -201,32 +172,24 @@
 
         .area {
             padding: 90px 8% 120px;
-
             background: #f7f7f7;
-
             text-align: center;
         }
 
         .area h2 {
             font-family: "Margarine", sans-serif;
-
             font-size: 42px;
             font-weight: normal;
-
             margin: 0 0 55px;
-
             color: #222;
         }
 
         .area-grid {
             max-width: 1200px;
-
             margin: 0 auto;
 
             display: grid;
-
             grid-template-columns: repeat(3, 1fr);
-
             gap: 25px;
         }
 
@@ -236,17 +199,13 @@
 
         .area-card {
             position: relative;
-
             height: 330px;
-
             overflow: hidden;
 
             border-radius: 18px;
-
             text-decoration: none;
 
-            box-shadow:
-                0 10px 30px rgba(0, 0, 0, 0.15);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
 
             transition:
                 transform 0.3s ease,
@@ -262,7 +221,6 @@
 
         .area-card img {
             position: absolute;
-
             inset: 0;
 
             width: 100%;
@@ -282,7 +240,6 @@
             content: "";
 
             position: absolute;
-
             inset: 0;
 
             background:
@@ -315,7 +272,6 @@
 
         .area-card-content h3 {
             font-family: "Margarine", sans-serif;
-
             font-size: 26px;
             font-weight: normal;
 
@@ -327,7 +283,6 @@
 
         .area-card-content p {
             font-family: Georgia, serif;
-
             font-size: 15px;
             line-height: 1.5;
 
@@ -345,7 +300,6 @@
 
         .contact-modal {
             position: fixed;
-
             inset: 0;
 
             display: flex;
@@ -414,7 +368,6 @@
             content: "";
 
             position: absolute;
-
             inset: 0;
 
             background:
@@ -466,7 +419,6 @@
             text-decoration: none;
 
             font-family: Arial, sans-serif;
-
             font-size: 30px;
 
             text-shadow:
@@ -548,7 +500,6 @@
         ========================= */
 
         @media (max-width: 800px) {
-
             .area-grid {
                 grid-template-columns: 1fr;
             }
@@ -559,7 +510,6 @@
         }
 
         @media (max-width: 700px) {
-
             header {
                 height: 80px;
                 padding: 0 4%;
@@ -641,44 +591,26 @@
 
 <body>
 
-    <!-- =========================
-         HEADER
-    ========================= -->
-
     <header>
 
         <div class="logo-box">
-
             <img
                 class="logo"
                 src="images/logo.png"
                 alt="Tatrzański Widok"
             >
-
         </div>
 
         <div class="nav-box">
-
             <nav>
-
-                <a href="#okolica">
-                    OKOLICA
-                </a>
-
-                <a href="#kontakt">
-                    KONTAKT
-                </a>
-
+                <a href="#okolica">OKOLICA</a>
+                <a href="#kontakt">KONTAKT</a>
             </nav>
-
         </div>
 
     </header>
 
-
-    <!-- =========================
-         HERO
-    ========================= -->
+    <!-- HERO -->
 
     <section class="hero">
 
@@ -702,9 +634,7 @@
     </section>
 
 
-    <!-- =========================
-         O NAS
-    ========================= -->
+    <!-- O NAS -->
 
     <section class="about">
 
@@ -724,9 +654,7 @@
     </section>
 
 
-    <!-- =========================
-         OKOLICA
-    ========================= -->
+    <!-- OKOLICA -->
 
     <section class="area" id="okolica">
 
@@ -736,10 +664,7 @@
 
         <div class="area-grid">
 
-            <!-- TATRY -->
-
             <a class="area-card" href="#">
-
                 <img
                     src="images/tatry.jpg"
                     alt="Tatry"
@@ -757,14 +682,10 @@
                     </p>
 
                 </div>
-
             </a>
 
 
-            <!-- ZAKOPANE -->
-
             <a class="area-card" href="#">
-
                 <img
                     src="images/zakopane.jpeg"
                     alt="Zakopane"
@@ -782,14 +703,10 @@
                     </p>
 
                 </div>
-
             </a>
 
 
-            <!-- TERMY -->
-
             <a class="area-card" href="#">
-
                 <img
                     src="images/termy.jpg"
                     alt="Termy"
@@ -807,14 +724,10 @@
                     </p>
 
                 </div>
-
             </a>
 
 
-            <!-- MORSKIE OKO -->
-
             <a class="area-card" href="#">
-
                 <img
                     src="images/morskie-oko.jpg"
                     alt="Morskie Oko"
@@ -832,14 +745,10 @@
                     </p>
 
                 </div>
-
             </a>
 
 
-            <!-- DOLINA KOŚCIELISKA -->
-
             <a class="area-card" href="#">
-
                 <img
                     src="images/dolina-koscieliska.jpg"
                     alt="Dolina Kościeliska"
@@ -857,14 +766,10 @@
                     </p>
 
                 </div>
-
             </a>
 
 
-            <!-- NOWY TARG -->
-
             <a class="area-card" href="#">
-
                 <img
                     src="images/nowy-targ.jpeg"
                     alt="Nowy Targ"
@@ -882,7 +787,6 @@
                     </p>
 
                 </div>
-
             </a>
 
         </div>
@@ -890,9 +794,7 @@
     </section>
 
 
-    <!-- =========================
-         KONTAKT
-    ========================= -->
+    <!-- KONTAKT -->
 
     <div
         class="contact-modal"
