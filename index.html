@@ -6,10 +6,8 @@
 
     <title>Tatrzański widok</title>
 
-    <!-- IKONA STRONY -->
     <link rel="icon" type="image/png" href="images/logo.png">
 
-    <!-- Margarine -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
@@ -62,7 +60,7 @@
 
 
         /* =========================
-           LOGO - BLUR
+           LOGO
         ========================= */
 
         .logo-box {
@@ -95,7 +93,7 @@
 
 
         /* =========================
-           MENU - BLUR
+           MENU
         ========================= */
 
         .nav-box {
@@ -114,6 +112,7 @@
 
         nav {
             display: flex;
+
             align-items: center;
 
             gap: 35px;
@@ -126,14 +125,15 @@
             text-decoration: none;
 
             font-size: 16px;
+
             font-weight: bold;
 
             text-shadow:
                 0 2px 6px rgba(0, 0, 0, 0.75);
 
-            transition: opacity 0.2s ease;
-
             cursor: pointer;
+
+            transition: opacity 0.2s ease;
         }
 
 
@@ -150,6 +150,7 @@
             position: relative;
 
             width: 100%;
+
             height: 520px;
 
             overflow: hidden;
@@ -158,6 +159,7 @@
 
         .hero img {
             width: 100%;
+
             height: 100%;
 
             display: block;
@@ -169,13 +171,14 @@
 
 
         /* =========================
-           NAPIS NA BANERZE
+           NAPIS
         ========================= */
 
         .hero-title {
             position: absolute;
 
             top: 50%;
+
             left: 50%;
 
             transform:
@@ -206,7 +209,7 @@
 
 
         .hero-title .subtitle {
-            font-family: "Margarine", sans-serif !important;
+            font-family: "Margarine", sans-serif;
 
             font-size: 25px;
 
@@ -245,8 +248,6 @@
 
             margin: 0 auto;
 
-            font-family: Georgia, serif;
-
             font-size: 21px;
 
             line-height: 1.9;
@@ -259,113 +260,37 @@
            OKNO KONTAKTOWE
         ========================= */
 
-        .contact-modal {
-            position: fixed;
+        dialog {
+            width: min(520px, 90%);
 
-            top: 0;
-            left: 0;
+            padding: 0;
 
-            width: 100%;
-            height: 100%;
+            border: none;
 
-            display: flex;
+            border-radius: 18px;
 
-            align-items: center;
-            justify-content: center;
+            background: rgba(255, 255, 255, 0.96);
 
-            padding: 20px;
+            box-shadow:
+                0 20px 70px rgba(0, 0, 0, 0.35);
 
-            background: rgba(0, 0, 0, 0.45);
-
-            backdrop-filter: blur(7px);
-            -webkit-backdrop-filter: blur(7px);
-
-            z-index: 100;
-
-            opacity: 0;
-            visibility: hidden;
-
-            transition:
-                opacity 0.25s ease,
-                visibility 0.25s ease;
+            text-align: center;
         }
 
 
-        .contact-modal.active {
-            opacity: 1;
-            visibility: visible;
+        dialog::backdrop {
+            background: rgba(0, 0, 0, 0.45);
+
+            backdrop-filter: blur(7px);
+
+            -webkit-backdrop-filter: blur(7px);
         }
 
 
         .contact-box {
             position: relative;
 
-            width: 100%;
-            max-width: 520px;
-
             padding: 50px 45px;
-
-            background: rgba(255, 255, 255, 0.92);
-
-            backdrop-filter: blur(15px);
-            -webkit-backdrop-filter: blur(15px);
-
-            border-radius: 18px;
-
-            box-shadow:
-                0 20px 60px rgba(0, 0, 0, 0.3);
-
-            text-align: center;
-
-            transform: translateY(20px) scale(0.96);
-
-            transition:
-                transform 0.25s ease;
-        }
-
-
-        .contact-modal.active .contact-box {
-            transform: translateY(0) scale(1);
-        }
-
-
-        /* =========================
-           PRZYCISK X
-        ========================= */
-
-        .close-contact {
-            position: absolute;
-
-            top: 15px;
-            right: 20px;
-
-            width: 38px;
-            height: 38px;
-
-            border: none;
-
-            background: transparent;
-
-            font-size: 30px;
-
-            line-height: 38px;
-
-            color: #444;
-
-            cursor: pointer;
-
-            border-radius: 50%;
-
-            transition:
-                background 0.2s ease,
-                transform 0.2s ease;
-        }
-
-
-        .close-contact:hover {
-            background: rgba(0, 0, 0, 0.08);
-
-            transform: rotate(90deg);
         }
 
 
@@ -382,9 +307,7 @@
         }
 
 
-        .contact-box .contact-intro {
-            font-family: Georgia, serif;
-
+        .contact-intro {
             font-size: 18px;
 
             line-height: 1.7;
@@ -400,7 +323,7 @@
 
             flex-direction: column;
 
-            gap: 22px;
+            gap: 18px;
         }
 
 
@@ -427,13 +350,45 @@
 
 
         .contact-item p {
-            font-family: Georgia, serif;
+            margin: 0;
 
             font-size: 17px;
 
-            margin: 0;
-
             color: #555;
+        }
+
+
+        /* =========================
+           ZAMKNIĘCIE
+        ========================= */
+
+        .close-contact {
+            position: absolute;
+
+            top: 12px;
+
+            right: 16px;
+
+            width: 40px;
+
+            height: 40px;
+
+            border: none;
+
+            border-radius: 50%;
+
+            background: transparent;
+
+            font-size: 30px;
+
+            color: #444;
+
+            cursor: pointer;
+        }
+
+
+        .close-contact:hover {
+            background: rgba(0, 0, 0, 0.08);
         }
 
 
@@ -480,11 +435,6 @@
             }
 
 
-            .hero img {
-                object-position: center center;
-            }
-
-
             .hero-title .title {
                 font-size: 34px;
             }
@@ -523,11 +473,6 @@
                 font-size: 32px;
             }
 
-
-            .contact-box .contact-intro {
-                font-size: 16px;
-            }
-
         }
 
     </style>
@@ -562,7 +507,7 @@
                     OKOLICA
                 </a>
 
-                <a href="#" id="contactButton">
+                <a href="#kontakt" onclick="document.getElementById('kontakt').showModal(); return false;">
                     KONTAKT
                 </a>
 
@@ -624,13 +569,13 @@
          OKNO KONTAKTOWE
     ========================= -->
 
-    <div class="contact-modal" id="contactModal">
+    <dialog id="kontakt">
 
         <div class="contact-box">
 
             <button
                 class="close-contact"
-                id="closeContact"
+                onclick="document.getElementById('kontakt').close();"
                 aria-label="Zamknij"
             >
                 ×
@@ -679,63 +624,7 @@
 
         </div>
 
-    </div>
-
-
-    <!-- =========================
-         JAVASCRIPT - KONTAKT
-    ========================= -->
-
-    <script>
-
-        const contactButton =
-            document.getElementById("contactButton");
-
-        const contactModal =
-            document.getElementById("contactModal");
-
-        const closeContact =
-            document.getElementById("closeContact");
-
-
-        contactButton.addEventListener("click", function(event) {
-
-            event.preventDefault();
-
-            contactModal.classList.add("active");
-
-        });
-
-
-        closeContact.addEventListener("click", function() {
-
-            contactModal.classList.remove("active");
-
-        });
-
-
-        contactModal.addEventListener("click", function(event) {
-
-            if (event.target === contactModal) {
-
-                contactModal.classList.remove("active");
-
-            }
-
-        });
-
-
-        document.addEventListener("keydown", function(event) {
-
-            if (event.key === "Escape") {
-
-                contactModal.classList.remove("active");
-
-            }
-
-        });
-
-    </script>
+    </dialog>
 
 
 </body>
