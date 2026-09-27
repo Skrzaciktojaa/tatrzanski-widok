@@ -6,7 +6,6 @@
 
     <title>Tatrzański widok</title>
 
-    <!-- Margarine -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
@@ -36,7 +35,6 @@
 
         header {
             position: absolute;
-
             top: 0;
             left: 0;
 
@@ -56,10 +54,45 @@
 
 
         /* =========================
-           LOGO
+           LOGO + BLUR
         ========================= */
 
+        .logo-wrap {
+            position: relative;
+
+            padding: 8px 18px;
+        }
+
+
+        .logo-wrap::before {
+            content: "";
+
+            position: absolute;
+
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+
+            background: rgba(255, 255, 255, 0.10);
+
+            backdrop-filter: blur(9px);
+            -webkit-backdrop-filter: blur(9px);
+
+            border-radius: 8px;
+
+            /*
+             * Brak borderu.
+             * Sam blur + delikatne rozjaśnienie.
+             */
+
+            z-index: -1;
+        }
+
+
         .logo {
+            position: relative;
+
             width: 230px;
             height: auto;
 
@@ -67,10 +100,9 @@
 
             object-fit: contain;
 
-            /* delikatne odcięcie od tła */
             filter:
                 drop-shadow(
-                    0 2px 6px rgba(0, 0, 0, 0.55)
+                    0 2px 6px rgba(0, 0, 0, 0.50)
                 );
         }
 
@@ -80,14 +112,43 @@
         ========================= */
 
         nav {
+            position: relative;
+
             display: flex;
             align-items: center;
 
             gap: 35px;
+
+            padding: 10px 16px;
+        }
+
+
+        /* Blur za menu, również bez ramki */
+
+        nav::before {
+            content: "";
+
+            position: absolute;
+
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+
+            background: rgba(255, 255, 255, 0.10);
+
+            backdrop-filter: blur(9px);
+            -webkit-backdrop-filter: blur(9px);
+
+            border-radius: 8px;
+
+            z-index: -1;
         }
 
 
         nav a {
+            position: relative;
+
             color: white;
 
             text-decoration: none;
@@ -95,9 +156,6 @@
             font-size: 16px;
             font-weight: bold;
 
-            /*
-             * Delikatny cień zamiast ramki
-             */
             text-shadow:
                 0 2px 6px rgba(0, 0, 0, 0.75);
 
@@ -133,7 +191,6 @@
 
             object-fit: cover;
 
-            /* mniej nieba */
             object-position: center 85%;
         }
 
@@ -256,6 +313,11 @@
             }
 
 
+            .logo-wrap {
+                padding: 6px 10px;
+            }
+
+
             .logo {
                 width: 145px;
             }
@@ -263,6 +325,8 @@
 
             nav {
                 gap: 12px;
+
+                padding: 7px 10px;
             }
 
 
@@ -305,38 +369,33 @@
 <body>
 
 
-    <!-- =========================
-         HEADER
-    ========================= -->
+    <!-- HEADER -->
 
     <header>
 
-        <img
-            class="logo"
-            src="images/logo.png"
-            alt="Tatrzański Widok"
-        >
+        <div class="logo-wrap">
+
+            <img
+                class="logo"
+                src="images/logo.png"
+                alt="Tatrzański Widok"
+            >
+
+        </div>
 
 
         <nav>
 
-            <a href="#">
-                OKOLICA
-            </a>
+            <a href="#">OKOLICA</a>
 
-            <a href="#">
-                KONTAKT
-            </a>
+            <a href="#">KONTAKT</a>
 
         </nav>
 
     </header>
 
 
-
-    <!-- =========================
-         BANER
-    ========================= -->
+    <!-- BANER -->
 
     <section class="hero">
 
@@ -380,10 +439,7 @@
     </section>
 
 
-
-    <!-- =========================
-         SLIDER
-    ========================= -->
+    <!-- SLIDER -->
 
     <script>
 
@@ -394,9 +450,7 @@
             "images/park.png"
         ];
 
-
         let currentImage = 0;
-
 
         const heroImage =
             document.getElementById("heroImage");
@@ -420,8 +474,7 @@
             currentImage--;
 
             if (currentImage < 0) {
-                currentImage =
-                    images.length - 1;
+                currentImage = images.length - 1;
             }
 
             heroImage.src =
