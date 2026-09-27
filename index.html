@@ -35,6 +35,7 @@
 
         header {
             position: absolute;
+
             top: 0;
             left: 0;
 
@@ -54,45 +55,25 @@
 
 
         /* =========================
-           LOGO + BLUR
+           LOGO - BLUR BEZ RAMKI
         ========================= */
 
-        .logo-wrap {
-            position: relative;
-
+        .logo-box {
             padding: 8px 18px;
-        }
 
+            background: rgba(255, 255, 255, 0.16);
 
-        .logo-wrap::before {
-            content: "";
-
-            position: absolute;
-
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-
-            background: rgba(255, 255, 255, 0.10);
-
-            backdrop-filter: blur(9px);
-            -webkit-backdrop-filter: blur(9px);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
 
             border-radius: 8px;
 
-            /*
-             * Brak borderu.
-             * Sam blur + delikatne rozjaśnienie.
-             */
-
-            z-index: -1;
+            /* BRAK BORDER */
+            border: none;
         }
 
 
         .logo {
-            position: relative;
-
             width: 230px;
             height: auto;
 
@@ -102,53 +83,39 @@
 
             filter:
                 drop-shadow(
-                    0 2px 6px rgba(0, 0, 0, 0.50)
+                    0 2px 5px rgba(0, 0, 0, 0.45)
                 );
         }
 
 
         /* =========================
-           MENU
+           MENU - BLUR BEZ RAMKI
         ========================= */
 
-        nav {
-            position: relative;
+        .nav-box {
+            padding: 12px 20px;
 
+            background: rgba(255, 255, 255, 0.16);
+
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+
+            border-radius: 8px;
+
+            /* BRAK BORDER */
+            border: none;
+        }
+
+
+        nav {
             display: flex;
             align-items: center;
 
             gap: 35px;
-
-            padding: 10px 16px;
-        }
-
-
-        /* Blur za menu, również bez ramki */
-
-        nav::before {
-            content: "";
-
-            position: absolute;
-
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-
-            background: rgba(255, 255, 255, 0.10);
-
-            backdrop-filter: blur(9px);
-            -webkit-backdrop-filter: blur(9px);
-
-            border-radius: 8px;
-
-            z-index: -1;
         }
 
 
         nav a {
-            position: relative;
-
             color: white;
 
             text-decoration: none;
@@ -159,8 +126,7 @@
             text-shadow:
                 0 2px 6px rgba(0, 0, 0, 0.75);
 
-            transition:
-                opacity 0.2s ease;
+            transition: opacity 0.2s ease;
         }
 
 
@@ -277,9 +243,7 @@
 
 
         .hero-title .title {
-            font-family:
-                "Margarine",
-                sans-serif;
+            font-family: "Margarine", sans-serif;
 
             font-size: 52px;
 
@@ -290,9 +254,7 @@
 
 
         .hero-title .subtitle {
-            font-family:
-                "Margarine",
-                sans-serif !important;
+            font-family: "Margarine", sans-serif !important;
 
             font-size: 25px;
 
@@ -308,12 +270,11 @@
 
             header {
                 height: 80px;
-
                 padding: 0 4%;
             }
 
 
-            .logo-wrap {
+            .logo-box {
                 padding: 6px 10px;
             }
 
@@ -323,10 +284,13 @@
             }
 
 
+            .nav-box {
+                padding: 8px 12px;
+            }
+
+
             nav {
                 gap: 12px;
-
-                padding: 7px 10px;
             }
 
 
@@ -357,7 +321,6 @@
 
             .arrow {
                 font-size: 45px;
-
                 padding: 10px;
             }
         }
@@ -369,11 +332,9 @@
 <body>
 
 
-    <!-- HEADER -->
-
     <header>
 
-        <div class="logo-wrap">
+        <div class="logo-box">
 
             <img
                 class="logo"
@@ -384,18 +345,20 @@
         </div>
 
 
-        <nav>
+        <div class="nav-box">
 
-            <a href="#">OKOLICA</a>
+            <nav>
 
-            <a href="#">KONTAKT</a>
+                <a href="#">OKOLICA</a>
 
-        </nav>
+                <a href="#">KONTAKT</a>
+
+            </nav>
+
+        </div>
 
     </header>
 
-
-    <!-- BANER -->
 
     <section class="hero">
 
@@ -438,8 +401,6 @@
 
     </section>
 
-
-    <!-- SLIDER -->
 
     <script>
 
