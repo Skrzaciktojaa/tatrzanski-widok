@@ -28,15 +28,12 @@
             font-family: Georgia, serif;
         }
 
-        /* =========================
-           HEADER
-        ========================= */
+        /* HEADER */
 
         header {
             position: absolute;
             top: 0;
             left: 0;
-
             width: 100%;
             height: 100px;
 
@@ -47,7 +44,6 @@
             justify-content: space-between;
 
             background: transparent;
-
             z-index: 20;
         }
 
@@ -66,7 +62,6 @@
         .logo {
             width: 230px;
             height: auto;
-
             display: block;
 
             filter: drop-shadow(0 2px 5px rgba(0, 0, 0, 0.45));
@@ -106,9 +101,7 @@
             opacity: 0.7;
         }
 
-        /* =========================
-           HERO
-        ========================= */
+        /* HERO */
 
         .hero {
             position: relative;
@@ -140,7 +133,6 @@
             z-index: 8;
 
             color: white;
-
             text-align: center;
             white-space: nowrap;
 
@@ -163,9 +155,7 @@
             font-weight: normal;
         }
 
-        /* =========================
-           OKOLICA
-        ========================= */
+        /* OKOLICA */
 
         .area {
             padding: 100px 8% 120px;
@@ -198,9 +188,7 @@
             gap: 25px;
         }
 
-        /* =========================
-           KAFELKI
-        ========================= */
+        /* KAFELKI */
 
         .area-card {
             position: relative;
@@ -246,10 +234,6 @@
             transform: scale(1.08);
         }
 
-        /* =========================
-           CIEMNY GRADIENT
-        ========================= */
-
         .area-card::after {
             content: "";
 
@@ -267,9 +251,7 @@
             z-index: 1;
         }
 
-        /* =========================
-           TEKST NA KAFELKACH
-        ========================= */
+        /* TEKST NA KAFELKACH */
 
         .area-card-content {
             position: absolute;
@@ -311,9 +293,7 @@
                 0 1px 5px rgba(0, 0, 0, 0.6);
         }
 
-        /* =========================
-           O NAS
-        ========================= */
+        /* O NAS */
 
         .about {
             padding: 90px 15% 130px;
@@ -347,9 +327,7 @@
             color: #333;
         }
 
-        /* =========================
-           TŁO KONTAKTU
-        ========================= */
+        /* KONTAKT - TŁO */
 
         .contact-modal {
             position: fixed;
@@ -384,9 +362,7 @@
             pointer-events: auto;
         }
 
-        /* =========================
-           SZKLANE OKIENKO
-        ========================= */
+        /* SZKLANE OKIENKO */
 
         .contact-box {
             position: relative;
@@ -450,9 +426,7 @@
             transform: translateY(0) scale(1);
         }
 
-        /* =========================
-           X
-        ========================= */
+        /* X */
 
         .close-contact {
             position: absolute;
@@ -481,9 +455,7 @@
                 0 2px 5px rgba(0, 0, 0, 0.4);
         }
 
-        /* =========================
-           TEKST KONTAKTU
-        ========================= */
+        /* TEKST KONTAKTU */
 
         .contact-box h2 {
             font-family: "Margarine", sans-serif;
@@ -551,9 +523,7 @@
             color: white;
         }
 
-        /* =========================
-           MOBILE
-        ========================= */
+        /* MOBILE */
 
         @media (max-width: 800px) {
 
@@ -649,9 +619,7 @@
 
 <body>
 
-    <!-- =========================
-         HEADER
-    ========================= -->
+    <!-- HEADER -->
 
     <header>
 
@@ -684,9 +652,7 @@
     </header>
 
 
-    <!-- =========================
-         HERO
-    ========================= -->
+    <!-- HERO -->
 
     <section class="hero">
 
@@ -710,9 +676,7 @@
     </section>
 
 
-    <!-- =========================
-         OKOLICA
-    ========================= -->
+    <!-- OKOLICA -->
 
     <section class="area" id="okolica">
 
@@ -721,8 +685,6 @@
         </h2>
 
         <div class="area-grid">
-
-            <!-- TATRY -->
 
             <a class="area-card" href="#">
 
@@ -747,8 +709,6 @@
             </a>
 
 
-            <!-- ZAKOPANE -->
-
             <a class="area-card" href="#">
 
                 <img
@@ -771,8 +731,6 @@
 
             </a>
 
-
-            <!-- TERMY -->
 
             <a class="area-card" href="#">
 
@@ -797,8 +755,6 @@
             </a>
 
 
-            <!-- MORSKIE OKO -->
-
             <a class="area-card" href="#">
 
                 <img
@@ -822,8 +778,6 @@
             </a>
 
 
-            <!-- DOLINA KOŚCIELISKA -->
-
             <a class="area-card" href="#">
 
                 <img
@@ -846,8 +800,6 @@
 
             </a>
 
-
-            <!-- NOWY TARG -->
 
             <a class="area-card" href="#">
 
@@ -876,9 +828,7 @@
     </section>
 
 
-    <!-- =========================
-         O NAS
-    ========================= -->
+    <!-- O NAS -->
 
     <section class="about">
 
@@ -898,9 +848,7 @@
     </section>
 
 
-    <!-- =========================
-         KONTAKT
-    ========================= -->
+    <!-- KONTAKT -->
 
     <div
         class="contact-modal"
