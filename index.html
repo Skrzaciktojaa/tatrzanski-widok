@@ -6,8 +6,8 @@
 
     <title>Tatrzański widok</title>
 
-    <!-- FAVICON -->
-    <link rel="icon" type="image/png" href="images/favicon.png">
+    <!-- IKONA STRONY -->
+    <link rel="icon" type="image/png" href="images/logo.png">
 
     <!-- Margarine -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -132,6 +132,8 @@
                 0 2px 6px rgba(0, 0, 0, 0.75);
 
             transition: opacity 0.2s ease;
+
+            cursor: pointer;
         }
 
 
@@ -176,7 +178,8 @@
             top: 50%;
             left: 50%;
 
-            transform: translate(-50%, -50%);
+            transform:
+                translate(-50%, -50%);
 
             z-index: 8;
 
@@ -253,74 +256,184 @@
 
 
         /* =========================
-           KONTAKT
+           OKNO KONTAKTOWE
         ========================= */
 
-        .contact {
-            padding: 100px 10% 140px;
+        .contact-modal {
+            position: fixed;
 
-            background: #f7f7f7;
+            top: 0;
+            left: 0;
 
-            text-align: center;
+            width: 100%;
+            height: 100%;
 
-            scroll-margin-top: 20px;
+            display: flex;
+
+            align-items: center;
+            justify-content: center;
+
+            padding: 20px;
+
+            background: rgba(0, 0, 0, 0.45);
+
+            backdrop-filter: blur(7px);
+            -webkit-backdrop-filter: blur(7px);
+
+            z-index: 100;
+
+            opacity: 0;
+            visibility: hidden;
+
+            transition:
+                opacity 0.25s ease,
+                visibility 0.25s ease;
         }
 
 
-        .contact h2 {
+        .contact-modal.active {
+            opacity: 1;
+            visibility: visible;
+        }
+
+
+        .contact-box {
+            position: relative;
+
+            width: 100%;
+            max-width: 520px;
+
+            padding: 50px 45px;
+
+            background: rgba(255, 255, 255, 0.92);
+
+            backdrop-filter: blur(15px);
+            -webkit-backdrop-filter: blur(15px);
+
+            border-radius: 18px;
+
+            box-shadow:
+                0 20px 60px rgba(0, 0, 0, 0.3);
+
+            text-align: center;
+
+            transform: translateY(20px) scale(0.96);
+
+            transition:
+                transform 0.25s ease;
+        }
+
+
+        .contact-modal.active .contact-box {
+            transform: translateY(0) scale(1);
+        }
+
+
+        /* =========================
+           PRZYCISK X
+        ========================= */
+
+        .close-contact {
+            position: absolute;
+
+            top: 15px;
+            right: 20px;
+
+            width: 38px;
+            height: 38px;
+
+            border: none;
+
+            background: transparent;
+
+            font-size: 30px;
+
+            line-height: 38px;
+
+            color: #444;
+
+            cursor: pointer;
+
+            border-radius: 50%;
+
+            transition:
+                background 0.2s ease,
+                transform 0.2s ease;
+        }
+
+
+        .close-contact:hover {
+            background: rgba(0, 0, 0, 0.08);
+
+            transform: rotate(90deg);
+        }
+
+
+        .contact-box h2 {
             font-family: "Margarine", sans-serif;
 
-            font-size: 42px;
+            font-size: 38px;
 
             font-weight: normal;
 
-            margin: 0 0 45px;
+            margin: 0 0 25px;
 
             color: #222;
         }
 
 
-        .contact-intro {
-            max-width: 750px;
-
-            margin: 0 auto 60px;
-
+        .contact-box .contact-intro {
             font-family: Georgia, serif;
 
-            font-size: 20px;
+            font-size: 18px;
 
-            line-height: 1.8;
+            line-height: 1.7;
 
-            color: #444;
+            color: #555;
+
+            margin: 0 0 35px;
         }
 
 
-        .contact-info {
+        .contact-details {
             display: flex;
 
-            justify-content: center;
+            flex-direction: column;
 
-            gap: 100px;
+            gap: 22px;
+        }
+
+
+        .contact-item {
+            padding: 18px;
+
+            background: rgba(0, 0, 0, 0.04);
+
+            border-radius: 12px;
         }
 
 
         .contact-item h3 {
             font-family: "Margarine", sans-serif;
 
-            font-size: 23px;
+            font-size: 20px;
 
             font-weight: normal;
 
-            margin: 0 0 12px;
+            margin: 0 0 8px;
+
+            color: #222;
         }
 
 
         .contact-item p {
             font-family: Georgia, serif;
 
-            font-size: 18px;
+            font-size: 17px;
 
-            color: #444;
+            margin: 0;
+
+            color: #555;
         }
 
 
@@ -401,29 +514,18 @@
             }
 
 
-            .contact {
-                padding: 60px 8% 90px;
+            .contact-box {
+                padding: 45px 25px;
             }
 
 
-            .contact h2 {
+            .contact-box h2 {
                 font-size: 32px;
-
-                margin-bottom: 35px;
             }
 
 
-            .contact-intro {
-                font-size: 17px;
-
-                margin-bottom: 40px;
-            }
-
-
-            .contact-info {
-                flex-direction: column;
-
-                gap: 35px;
+            .contact-box .contact-intro {
+                font-size: 16px;
             }
 
         }
@@ -460,7 +562,7 @@
                     OKOLICA
                 </a>
 
-                <a href="#kontakt">
+                <a href="#" id="contactButton">
                     KONTAKT
                 </a>
 
@@ -519,52 +621,121 @@
 
 
     <!-- =========================
-         KONTAKT
+         OKNO KONTAKTOWE
     ========================= -->
 
-    <section class="contact" id="kontakt">
+    <div class="contact-modal" id="contactModal">
 
-        <h2>
-            Kontakt
-        </h2>
+        <div class="contact-box">
 
-
-        <p class="contact-intro">
-            Masz pytania? Chcesz dowiedzieć się więcej o naszych apartamentach?
-            Skontaktuj się z nami!
-        </p>
-
-
-        <div class="contact-info">
-
-            <div class="contact-item">
-
-                <h3>
-                    Telefon
-                </h3>
-
-                <p>
-                    +48 XXX XXX XXX
-                </p>
-
-            </div>
+            <button
+                class="close-contact"
+                id="closeContact"
+                aria-label="Zamknij"
+            >
+                ×
+            </button>
 
 
-            <div class="contact-item">
+            <h2>
+                Kontakt
+            </h2>
 
-                <h3>
-                    E-mail
-                </h3>
 
-                <p>
-                    kontakt@tatrzanskiwidok.pl
-                </p>
+            <p class="contact-intro">
+                Masz pytania? Chcesz dowiedzieć się więcej o naszych
+                apartamentach? Skontaktuj się z nami!
+            </p>
+
+
+            <div class="contact-details">
+
+                <div class="contact-item">
+
+                    <h3>
+                        Telefon
+                    </h3>
+
+                    <p>
+                        +48 XXX XXX XXX
+                    </p>
+
+                </div>
+
+
+                <div class="contact-item">
+
+                    <h3>
+                        E-mail
+                    </h3>
+
+                    <p>
+                        kontakt@mushroomhub.xyz
+                    </p>
+
+                </div>
 
             </div>
 
         </div>
 
-    </section>
+    </div>
+
+
+    <!-- =========================
+         JAVASCRIPT - KONTAKT
+    ========================= -->
+
+    <script>
+
+        const contactButton =
+            document.getElementById("contactButton");
+
+        const contactModal =
+            document.getElementById("contactModal");
+
+        const closeContact =
+            document.getElementById("closeContact");
+
+
+        contactButton.addEventListener("click", function(event) {
+
+            event.preventDefault();
+
+            contactModal.classList.add("active");
+
+        });
+
+
+        closeContact.addEventListener("click", function() {
+
+            contactModal.classList.remove("active");
+
+        });
+
+
+        contactModal.addEventListener("click", function(event) {
+
+            if (event.target === contactModal) {
+
+                contactModal.classList.remove("active");
+
+            }
+
+        });
+
+
+        document.addEventListener("keydown", function(event) {
+
+            if (event.key === "Escape") {
+
+                contactModal.classList.remove("active");
+
+            }
+
+        });
+
+    </script>
 
 
 </body>
