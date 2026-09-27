@@ -67,12 +67,10 @@
 
             object-fit: contain;
 
-            /*
-             * Delikatny cień zamiast ramki
-             */
+            /* delikatne odcięcie od tła */
             filter:
                 drop-shadow(
-                    0 2px 5px rgba(0, 0, 0, 0.45)
+                    0 2px 6px rgba(0, 0, 0, 0.55)
                 );
         }
 
@@ -86,19 +84,6 @@
             align-items: center;
 
             gap: 35px;
-
-            /*
-             * Delikatne rozmycie tła
-             * bez żadnej ramki
-             */
-            padding: 10px 16px;
-
-            background: rgba(255, 255, 255, 0.10);
-
-            backdrop-filter: blur(8px);
-            -webkit-backdrop-filter: blur(8px);
-
-            border-radius: 8px;
         }
 
 
@@ -110,6 +95,9 @@
             font-size: 16px;
             font-weight: bold;
 
+            /*
+             * Delikatny cień zamiast ramki
+             */
             text-shadow:
                 0 2px 6px rgba(0, 0, 0, 0.75);
 
@@ -145,9 +133,7 @@
 
             object-fit: cover;
 
-            /*
-             * Zdjęcie przesunięte trochę w dół
-             */
+            /* mniej nieba */
             object-position: center 85%;
         }
 
@@ -161,13 +147,11 @@
 
             top: 50%;
 
-            transform:
-                translateY(-50%);
+            transform: translateY(-50%);
 
             padding: 15px 20px;
 
             border: none;
-
             background: transparent;
 
             color: white;
@@ -210,7 +194,7 @@
 
 
         /* =========================
-           NAPIS NA BANERZE
+           NAPIS
         ========================= */
 
         .hero-title {
@@ -279,8 +263,6 @@
 
             nav {
                 gap: 12px;
-
-                padding: 7px 10px;
             }
 
 
@@ -323,7 +305,9 @@
 <body>
 
 
-    <!-- HEADER -->
+    <!-- =========================
+         HEADER
+    ========================= -->
 
     <header>
 
@@ -350,7 +334,9 @@
 
 
 
-    <!-- BANER -->
+    <!-- =========================
+         BANER
+    ========================= -->
 
     <section class="hero">
 
@@ -395,7 +381,9 @@
 
 
 
-    <!-- SLIDER -->
+    <!-- =========================
+         SLIDER
+    ========================= -->
 
     <script>
 
