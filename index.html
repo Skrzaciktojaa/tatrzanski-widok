@@ -6,8 +6,10 @@
 
     <title>Tatrzański widok</title>
 
+    <!-- IKONA STRONY -->
     <link rel="icon" type="image/png" href="images/logo.png">
 
+    <!-- Margarine -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
@@ -60,7 +62,7 @@
 
 
         /* =========================
-           LOGO
+           LOGO - BLUR
         ========================= */
 
         .logo-box {
@@ -93,7 +95,7 @@
 
 
         /* =========================
-           MENU
+           MENU - BLUR
         ========================= */
 
         .nav-box {
@@ -131,9 +133,9 @@
             text-shadow:
                 0 2px 6px rgba(0, 0, 0, 0.75);
 
-            cursor: pointer;
-
             transition: opacity 0.2s ease;
+
+            cursor: pointer;
         }
 
 
@@ -171,14 +173,13 @@
 
 
         /* =========================
-           NAPIS
+           NAPIS NA BANERZE
         ========================= */
 
         .hero-title {
             position: absolute;
 
             top: 50%;
-
             left: 50%;
 
             transform:
@@ -209,7 +210,7 @@
 
 
         .hero-title .subtitle {
-            font-family: "Margarine", sans-serif;
+            font-family: "Margarine", sans-serif !important;
 
             font-size: 25px;
 
@@ -248,6 +249,8 @@
 
             margin: 0 auto;
 
+            font-family: Georgia, serif;
+
             font-size: 21px;
 
             line-height: 1.9;
@@ -260,39 +263,139 @@
            OKNO KONTAKTOWE
         ========================= */
 
-        dialog {
-            width: min(520px, 90%);
+        .contact-modal {
+            position: fixed;
 
-            padding: 0;
+            top: 0;
+            left: 0;
 
-            border: none;
+            width: 100%;
+            height: 100%;
 
-            border-radius: 18px;
+            display: flex;
 
-            background: rgba(255, 255, 255, 0.96);
+            align-items: center;
+            justify-content: center;
 
-            box-shadow:
-                0 20px 70px rgba(0, 0, 0, 0.35);
+            padding: 20px;
 
-            text-align: center;
-        }
-
-
-        dialog::backdrop {
             background: rgba(0, 0, 0, 0.45);
 
             backdrop-filter: blur(7px);
-
             -webkit-backdrop-filter: blur(7px);
+
+            z-index: 100;
+
+            opacity: 0;
+
+            visibility: hidden;
+
+            pointer-events: none;
+
+            transition:
+                opacity 0.25s ease,
+                visibility 0.25s ease;
         }
 
+
+        /* POKAZANIE OKNA */
+
+        .contact-modal:target {
+            opacity: 1;
+
+            visibility: visible;
+
+            pointer-events: auto;
+        }
+
+
+        /* =========================
+           BOX KONTAKTOWY
+        ========================= */
 
         .contact-box {
             position: relative;
 
+            width: 100%;
+
+            max-width: 520px;
+
             padding: 50px 45px;
+
+            background: rgba(255, 255, 255, 0.96);
+
+            backdrop-filter: blur(15px);
+            -webkit-backdrop-filter: blur(15px);
+
+            border-radius: 18px;
+
+            box-shadow:
+                0 20px 60px rgba(0, 0, 0, 0.3);
+
+            text-align: center;
+
+            transform:
+                translateY(20px)
+                scale(0.96);
+
+            transition:
+                transform 0.25s ease;
         }
 
+
+        .contact-modal:target .contact-box {
+            transform:
+                translateY(0)
+                scale(1);
+        }
+
+
+        /* =========================
+           X
+        ========================= */
+
+        .close-contact {
+            position: absolute;
+
+            top: 12px;
+            right: 18px;
+
+            width: 40px;
+            height: 40px;
+
+            display: flex;
+
+            align-items: center;
+            justify-content: center;
+
+            border-radius: 50%;
+
+            color: #444;
+
+            text-decoration: none;
+
+            font-family: Arial, sans-serif;
+
+            font-size: 30px;
+
+            line-height: 1;
+
+            transition:
+                background 0.2s ease,
+                transform 0.2s ease;
+        }
+
+
+        .close-contact:hover {
+            background: rgba(0, 0, 0, 0.08);
+
+            transform: rotate(90deg);
+        }
+
+
+        /* =========================
+           TEKST KONTAKTU
+        ========================= */
 
         .contact-box h2 {
             font-family: "Margarine", sans-serif;
@@ -308,6 +411,8 @@
 
 
         .contact-intro {
+            font-family: Georgia, serif;
+
             font-size: 18px;
 
             line-height: 1.7;
@@ -323,7 +428,7 @@
 
             flex-direction: column;
 
-            gap: 18px;
+            gap: 20px;
         }
 
 
@@ -350,45 +455,13 @@
 
 
         .contact-item p {
-            margin: 0;
+            font-family: Georgia, serif;
 
             font-size: 17px;
 
+            margin: 0;
+
             color: #555;
-        }
-
-
-        /* =========================
-           ZAMKNIĘCIE
-        ========================= */
-
-        .close-contact {
-            position: absolute;
-
-            top: 12px;
-
-            right: 16px;
-
-            width: 40px;
-
-            height: 40px;
-
-            border: none;
-
-            border-radius: 50%;
-
-            background: transparent;
-
-            font-size: 30px;
-
-            color: #444;
-
-            cursor: pointer;
-        }
-
-
-        .close-contact:hover {
-            background: rgba(0, 0, 0, 0.08);
         }
 
 
@@ -435,6 +508,11 @@
             }
 
 
+            .hero img {
+                object-position: center center;
+            }
+
+
             .hero-title .title {
                 font-size: 34px;
             }
@@ -473,6 +551,11 @@
                 font-size: 32px;
             }
 
+
+            .contact-intro {
+                font-size: 16px;
+            }
+
         }
 
     </style>
@@ -507,7 +590,8 @@
                     OKOLICA
                 </a>
 
-                <a href="#kontakt" onclick="document.getElementById('kontakt').showModal(); return false;">
+                <!-- KONTAKT -->
+                <a href="#kontakt">
                     KONTAKT
                 </a>
 
@@ -566,20 +650,23 @@
 
 
     <!-- =========================
-         OKNO KONTAKTOWE
+         KONTAKT - MODAL
     ========================= -->
 
-    <dialog id="kontakt">
+    <div
+        class="contact-modal"
+        id="kontakt"
+    >
 
         <div class="contact-box">
 
-            <button
+            <a
+                href="#"
                 class="close-contact"
-                onclick="document.getElementById('kontakt').close();"
                 aria-label="Zamknij"
             >
                 ×
-            </button>
+            </a>
 
 
             <h2>
@@ -624,7 +711,7 @@
 
         </div>
 
-    </dialog>
+    </div>
 
 
 </body>
