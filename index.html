@@ -36,8 +36,10 @@
             position: absolute;
             top: 0;
             left: 0;
+
             width: 100%;
             height: 100px;
+
             padding: 0 6%;
 
             display: flex;
@@ -45,6 +47,7 @@
             justify-content: space-between;
 
             background: transparent;
+
             z-index: 20;
         }
 
@@ -52,6 +55,7 @@
             padding: 8px 18px;
 
             background: rgba(255, 255, 255, 0.16);
+
             backdrop-filter: blur(10px);
             -webkit-backdrop-filter: blur(10px);
 
@@ -62,8 +66,8 @@
         .logo {
             width: 230px;
             height: auto;
+
             display: block;
-            object-fit: contain;
 
             filter: drop-shadow(0 2px 5px rgba(0, 0, 0, 0.45));
         }
@@ -72,6 +76,7 @@
             padding: 12px 20px;
 
             background: rgba(255, 255, 255, 0.16);
+
             backdrop-filter: blur(10px);
             -webkit-backdrop-filter: blur(10px);
 
@@ -95,7 +100,6 @@
             text-shadow: 0 2px 6px rgba(0, 0, 0, 0.75);
 
             transition: opacity 0.2s ease;
-            cursor: pointer;
         }
 
         nav a:hover {
@@ -108,8 +112,10 @@
 
         .hero {
             position: relative;
+
             width: 100%;
             height: 520px;
+
             overflow: hidden;
         }
 
@@ -134,6 +140,7 @@
             z-index: 8;
 
             color: white;
+
             text-align: center;
             white-space: nowrap;
 
@@ -193,17 +200,13 @@
         }
 
         /* =========================
-           TŁO MODALA
+           TŁO POD OKIENKIEM
         ========================= */
 
         .contact-modal {
             position: fixed;
 
-            top: 0;
-            left: 0;
-
-            width: 100%;
-            height: 100%;
+            inset: 0;
 
             display: flex;
             align-items: center;
@@ -211,12 +214,10 @@
 
             padding: 20px;
 
-            /* przyciemnienie */
-            background: rgba(0, 0, 0, 0.38);
+            background: rgba(0, 0, 0, 0.40);
 
-            /* blur strony za modalem */
-            backdrop-filter: blur(9px);
-            -webkit-backdrop-filter: blur(9px);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
 
             z-index: 100;
 
@@ -236,7 +237,7 @@
         }
 
         /* =========================
-           SZKLANE OKIENKO
+           PRAWDZIWE SZKŁO
         ========================= */
 
         .contact-box {
@@ -248,22 +249,29 @@
             padding: 50px 45px;
 
             /*
-                KLUCZOWA CZĘŚĆ:
-                półprzezroczyste tło pozwala
-                zobaczyć rozmyte góry przez modal
+            BARDZO PRZEZROCZYSTE TŁO
             */
-            background: rgba(255, 255, 255, 0.24);
 
-            backdrop-filter: blur(22px) saturate(120%);
-            -webkit-backdrop-filter: blur(22px) saturate(120%);
+            background: rgba(255, 255, 255, 0.12);
 
-            border: 1px solid rgba(255, 255, 255, 0.30);
+            /*
+            TO ROZMYWA TO,
+            CO ZNAJDUJE SIĘ ZA OKIENKIEM
+            */
 
-            border-radius: 18px;
+            backdrop-filter: blur(25px) saturate(140%);
+            -webkit-backdrop-filter: blur(25px) saturate(140%);
+
+            border-radius: 20px;
+
+            border: 1px solid rgba(255, 255, 255, 0.28);
 
             box-shadow:
-                0 20px 60px rgba(0, 0, 0, 0.30),
-                inset 0 1px 0 rgba(255, 255, 255, 0.25);
+                0 25px 70px rgba(0, 0, 0, 0.35),
+                inset 0 1px 1px rgba(255, 255, 255, 0.35),
+                inset 0 -1px 1px rgba(255, 255, 255, 0.08);
+
+            overflow: hidden;
 
             text-align: center;
 
@@ -272,12 +280,48 @@
             transition: transform 0.25s ease;
         }
 
+        /*
+        DODATKOWA WARSTWA SZKŁA
+        */
+
+        .contact-box::before {
+            content: "";
+
+            position: absolute;
+
+            inset: 0;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    rgba(255, 255, 255, 0.20),
+                    rgba(255, 255, 255, 0.04) 45%,
+                    rgba(255, 255, 255, 0.10)
+                );
+
+            backdrop-filter: blur(18px);
+            -webkit-backdrop-filter: blur(18px);
+
+            pointer-events: none;
+
+            z-index: 0;
+        }
+
+        /*
+        CAŁA TREŚĆ NAD WARSTWĄ SZKŁA
+        */
+
+        .contact-box > * {
+            position: relative;
+            z-index: 1;
+        }
+
         .contact-modal:target .contact-box {
             transform: translateY(0) scale(1);
         }
 
         /* =========================
-           X
+           ZAMKNIĘCIE
         ========================= */
 
         .close-contact {
@@ -304,7 +348,7 @@
             font-size: 30px;
             line-height: 1;
 
-            text-shadow: 0 2px 5px rgba(0, 0, 0, 0.35);
+            text-shadow: 0 2px 5px rgba(0, 0, 0, 0.4);
 
             transition:
                 background 0.2s ease,
@@ -313,12 +357,11 @@
 
         .close-contact:hover {
             background: rgba(255, 255, 255, 0.15);
-
             transform: rotate(90deg);
         }
 
         /* =========================
-           TEKST MODALA
+           TYTUŁ
         ========================= */
 
         .contact-box h2 {
@@ -332,7 +375,7 @@
             color: white;
 
             text-shadow:
-                0 2px 8px rgba(0, 0, 0, 0.35);
+                0 2px 8px rgba(0, 0, 0, 0.45);
         }
 
         .contact-intro {
@@ -346,11 +389,11 @@
             margin: 0 0 35px;
 
             text-shadow:
-                0 1px 5px rgba(0, 0, 0, 0.30);
+                0 2px 6px rgba(0, 0, 0, 0.4);
         }
 
         /* =========================
-           KONTAKT - SZKLANE POLA
+           POLA KONTAKTOWE
         ========================= */
 
         .contact-details {
@@ -363,21 +406,27 @@
         .contact-item {
             padding: 18px;
 
-            /*
-                jeszcze bardziej przezroczyste
-                szklane pola
-            */
-            background: rgba(255, 255, 255, 0.12);
+            background: rgba(255, 255, 255, 0.10);
 
-            backdrop-filter: blur(12px);
-            -webkit-backdrop-filter: blur(12px);
+            backdrop-filter: blur(15px);
+            -webkit-backdrop-filter: blur(15px);
 
             border: 1px solid rgba(255, 255, 255, 0.18);
 
-            border-radius: 12px;
+            border-radius: 14px;
 
             box-shadow:
-                inset 0 1px 0 rgba(255, 255, 255, 0.15);
+                inset 0 1px 1px rgba(255, 255, 255, 0.20);
+
+            transition:
+                background 0.2s ease,
+                transform 0.2s ease;
+        }
+
+        .contact-item:hover {
+            background: rgba(255, 255, 255, 0.16);
+
+            transform: translateY(-2px);
         }
 
         .contact-item h3 {
@@ -391,7 +440,7 @@
             color: white;
 
             text-shadow:
-                0 2px 5px rgba(0, 0, 0, 0.30);
+                0 2px 5px rgba(0, 0, 0, 0.4);
         }
 
         .contact-item p {
@@ -404,31 +453,7 @@
             color: white;
 
             text-shadow:
-                0 1px 4px rgba(0, 0, 0, 0.25);
-        }
-
-        /* =========================
-           TELEFON / EMAIL
-        ========================= */
-
-        .contact-item p {
-            word-break: break-word;
-        }
-
-        /* =========================
-           TELEFON / EMAIL HOVER
-        ========================= */
-
-        .contact-item {
-            transition:
-                background 0.2s ease,
-                transform 0.2s ease;
-        }
-
-        .contact-item:hover {
-            background: rgba(255, 255, 255, 0.17);
-
-            transform: translateY(-2px);
+                0 1px 5px rgba(0, 0, 0, 0.35);
         }
 
         /* =========================
@@ -464,10 +489,6 @@
 
             .hero {
                 height: 400px;
-            }
-
-            .hero img {
-                object-position: center center;
             }
 
             .hero-title .title {
@@ -509,9 +530,7 @@
 
 <body>
 
-    <!-- =========================
-         HEADER
-    ========================= -->
+    <!-- HEADER -->
 
     <header>
 
@@ -542,9 +561,7 @@
     </header>
 
 
-    <!-- =========================
-         HERO
-    ========================= -->
+    <!-- HERO -->
 
     <section class="hero">
 
@@ -568,9 +585,7 @@
     </section>
 
 
-    <!-- =========================
-         O NAS
-    ========================= -->
+    <!-- O NAS -->
 
     <section class="about">
 
@@ -590,9 +605,7 @@
     </section>
 
 
-    <!-- =========================
-         KONTAKT
-    ========================= -->
+    <!-- KONTAKT -->
 
     <div
         class="contact-modal"
@@ -631,7 +644,6 @@
                     </p>
 
                 </div>
-
 
                 <div class="contact-item">
 
