@@ -6,15 +6,17 @@
 
     <title>Tatrzański widok</title>
 
-    <!-- Font Margarine -->
+    <!-- Google Font -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
     <link
         href="https://fonts.googleapis.com/css2?family=Margarine&display=swap"
         rel="stylesheet"
     >
 
     <style>
+
         * {
             box-sizing: border-box;
         }
@@ -27,16 +29,19 @@
             font-family: Georgia, serif;
         }
 
+
         /* =========================
            HEADER
         ========================= */
 
         header {
             position: absolute;
+
             top: 0;
             left: 0;
+
             width: 100%;
-            height: 90px;
+            height: 100px;
 
             display: flex;
             align-items: center;
@@ -45,81 +50,157 @@
             padding: 0 6%;
 
             background: transparent;
+
             z-index: 10;
         }
 
-        .logo {
-            width: 230px;
-            height: auto;
-            display: block;
-            object-fit: contain;
 
-            filter: drop-shadow(
-                0 1px 4px rgba(0, 0, 0, 0.45)
-            );
+        /* =========================
+           RAMKA LOGO
+        ========================= */
+
+        .logo-box {
+
+            padding: 8px 18px;
+
+            border: 1px solid rgba(255, 255, 255, 0.45);
+
+            background: rgba(80, 80, 80, 0.18);
+
+            backdrop-filter: blur(8px);
+            -webkit-backdrop-filter: blur(8px);
+
+            border-radius: 6px;
+
+            box-shadow:
+                0 2px 8px rgba(0, 0, 0, 0.15);
         }
 
+
+        .logo {
+
+            width: 230px;
+            height: auto;
+
+            display: block;
+
+            object-fit: contain;
+
+            filter:
+                drop-shadow(
+                    0 1px 4px rgba(0, 0, 0, 0.45)
+                );
+        }
+
+
+        /* =========================
+           RAMKA MENU
+        ========================= */
+
+        .nav-box {
+
+            padding: 12px 20px;
+
+            border: 1px solid rgba(255, 255, 255, 0.45);
+
+            background: rgba(80, 80, 80, 0.18);
+
+            backdrop-filter: blur(8px);
+            -webkit-backdrop-filter: blur(8px);
+
+            border-radius: 6px;
+
+            box-shadow:
+                0 2px 8px rgba(0, 0, 0, 0.15);
+        }
+
+
         nav {
+
             display: flex;
+
             gap: 35px;
         }
 
+
         nav a {
+
             color: white;
+
             text-decoration: none;
 
             font-size: 16px;
+
             font-weight: bold;
 
             text-shadow:
                 0 2px 6px rgba(0, 0, 0, 0.75);
 
-            transition: opacity 0.2s ease;
+            transition:
+                opacity 0.2s ease;
         }
 
+
         nav a:hover {
+
             opacity: 0.7;
         }
+
 
         /* =========================
            BANER
         ========================= */
 
         .hero {
+
             position: relative;
 
             width: 100%;
+
             height: 520px;
 
             overflow: hidden;
         }
 
+
         .hero img {
+
             width: 100%;
             height: 100%;
 
             object-fit: cover;
-            object-position: center;
+
+            /*
+             * Przesuwamy zdjęcie trochę w dół,
+             * żeby było mniej nieba.
+             */
+            object-position: center 75%;
 
             display: block;
         }
+
 
         /* =========================
            STRZAŁKI
         ========================= */
 
         .arrow {
+
             position: absolute;
 
             top: 50%;
-            transform: translateY(-50%);
+
+            transform:
+                translateY(-50%);
 
             background: transparent;
+
             border: none;
 
             color: white;
 
             font-size: 60px;
+
             font-family: Arial, sans-serif;
 
             cursor: pointer;
@@ -136,15 +217,21 @@
                 transform 0.2s ease;
         }
 
+
         .arrow.left {
+
             left: 5px;
         }
 
+
         .arrow.right {
+
             right: 5px;
         }
 
+
         .arrow:hover {
+
             opacity: 0.7;
 
             transform:
@@ -152,11 +239,13 @@
                 scale(1.08);
         }
 
+
         /* =========================
            NAPIS NA BANERZE
         ========================= */
 
         .hero-title {
+
             position: absolute;
 
             top: 50%;
@@ -177,10 +266,15 @@
                 0 3px 10px rgba(0, 0, 0, 0.75);
         }
 
+
         .hero-title .title {
-            font-family: "Margarine", sans-serif;
+
+            font-family:
+                "Margarine",
+                sans-serif;
 
             font-size: 52px;
+
             font-weight: normal;
 
             margin-bottom: 8px;
@@ -188,14 +282,20 @@
             text-align: center;
         }
 
+
         .hero-title .subtitle {
-            font-family: "Margarine", sans-serif !important;
+
+            font-family:
+                "Margarine",
+                sans-serif !important;
 
             font-size: 25px;
+
             font-weight: normal;
 
             text-align: center;
         }
+
 
         /* =========================
            TELEFONY
@@ -204,43 +304,75 @@
         @media (max-width: 700px) {
 
             header {
-                height: 75px;
+
+                height: 80px;
+
                 padding: 0 4%;
             }
 
+
+            .logo-box {
+
+                padding: 6px 10px;
+            }
+
+
             .logo {
+
                 width: 145px;
             }
 
+
+            .nav-box {
+
+                padding: 8px 12px;
+            }
+
+
             nav {
+
                 gap: 12px;
             }
 
+
             nav a {
+
                 font-size: 11px;
             }
 
+
             .hero {
+
                 height: 400px;
             }
 
+
             .hero-title .title {
+
                 font-size: 34px;
             }
 
+
             .hero-title .subtitle {
+
                 font-size: 19px;
             }
 
+
             .arrow {
+
                 font-size: 45px;
+
                 padding: 10px;
             }
         }
+
     </style>
 </head>
 
+
 <body>
+
 
     <!-- =========================
          HEADER
@@ -248,31 +380,58 @@
 
     <header>
 
-        <img
-            class="logo"
-            src="images/logo.png"
-            alt="Tatrzański Widok"
-        >
 
-        <nav>
-            <a href="#">OKOLICA</a>
-            <a href="#">KONTAKT</a>
-        </nav>
+        <!-- LOGO -->
+
+        <div class="logo-box">
+
+            <img
+                class="logo"
+                src="images/logo.png"
+                alt="Tatrzański Widok"
+            >
+
+        </div>
+
+
+        <!-- MENU -->
+
+        <div class="nav-box">
+
+            <nav>
+
+                <a href="#">
+                    OKOLICA
+                </a>
+
+                <a href="#">
+                    KONTAKT
+                </a>
+
+            </nav>
+
+        </div>
+
 
     </header>
 
 
+
     <!-- =========================
-         BANER / SLIDER
+         BANER
     ========================= -->
 
     <section class="hero">
+
 
         <img
             id="heroImage"
             src="images/widok.jpeg"
             alt="Tatrzański widok"
         >
+
+
+        <!-- LEWA STRZAŁKA -->
 
         <button
             class="arrow left"
@@ -282,6 +441,9 @@
             ‹
         </button>
 
+
+        <!-- PRAWA STRZAŁKA -->
+
         <button
             class="arrow right"
             onclick="nextImage()"
@@ -290,6 +452,8 @@
             ›
         </button>
 
+
+        <!-- NAPIS -->
 
         <div class="hero-title">
 
@@ -303,7 +467,9 @@
 
         </div>
 
+
     </section>
+
 
 
     <!-- =========================
@@ -315,13 +481,18 @@
         const images = [
 
             "images/widok.jpeg",
+
             "images/panorama.png",
+
             "images/budynek.png",
+
             "images/park.png"
 
         ];
 
+
         let currentImage = 0;
+
 
         const heroImage =
             document.getElementById("heroImage");
@@ -332,7 +503,9 @@
             currentImage++;
 
             if (currentImage >= images.length) {
+
                 currentImage = 0;
+
             }
 
             heroImage.src =
@@ -345,7 +518,10 @@
             currentImage--;
 
             if (currentImage < 0) {
-                currentImage = images.length - 1;
+
+                currentImage =
+                    images.length - 1;
+
             }
 
             heroImage.src =
@@ -353,6 +529,7 @@
         }
 
     </script>
+
 
 </body>
 </html>
