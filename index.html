@@ -28,7 +28,9 @@
             font-family: Georgia, serif;
         }
 
-        /* HEADER */
+        /* =========================
+           HEADER
+        ========================= */
 
         header {
             position: absolute;
@@ -101,7 +103,9 @@
             opacity: 0.7;
         }
 
-        /* HERO */
+        /* =========================
+           HERO
+        ========================= */
 
         .hero {
             position: relative;
@@ -155,10 +159,48 @@
             font-weight: normal;
         }
 
-        /* OKOLICA */
+        /* =========================
+           O NAS
+        ========================= */
+
+        .about {
+            padding: 90px 15% 100px;
+
+            background: white;
+
+            text-align: center;
+        }
+
+        .about h2 {
+            font-family: "Margarine", sans-serif;
+
+            font-size: 42px;
+            font-weight: normal;
+
+            margin: 0 0 60px;
+
+            color: #222;
+        }
+
+        .about p {
+            max-width: 950px;
+
+            margin: 0 auto;
+
+            font-family: Georgia, serif;
+
+            font-size: 21px;
+            line-height: 1.9;
+
+            color: #333;
+        }
+
+        /* =========================
+           OKOLICA
+        ========================= */
 
         .area {
-            padding: 100px 8% 120px;
+            padding: 90px 8% 120px;
 
             background: #f7f7f7;
 
@@ -188,7 +230,9 @@
             gap: 25px;
         }
 
-        /* KAFELKI */
+        /* =========================
+           KAFELKI
+        ========================= */
 
         .area-card {
             position: relative;
@@ -251,7 +295,9 @@
             z-index: 1;
         }
 
-        /* TEKST NA KAFELKACH */
+        /* =========================
+           TEKST NA KAFELKACH
+        ========================= */
 
         .area-card-content {
             position: absolute;
@@ -293,41 +339,9 @@
                 0 1px 5px rgba(0, 0, 0, 0.6);
         }
 
-        /* O NAS */
-
-        .about {
-            padding: 90px 15% 130px;
-
-            background: white;
-
-            text-align: center;
-        }
-
-        .about h2 {
-            font-family: "Margarine", sans-serif;
-
-            font-size: 42px;
-            font-weight: normal;
-
-            margin: 0 0 60px;
-
-            color: #222;
-        }
-
-        .about p {
-            max-width: 950px;
-
-            margin: 0 auto;
-
-            font-family: Georgia, serif;
-
-            font-size: 21px;
-            line-height: 1.9;
-
-            color: #333;
-        }
-
-        /* KONTAKT - TŁO */
+        /* =========================
+           KONTAKT - TŁO
+        ========================= */
 
         .contact-modal {
             position: fixed;
@@ -362,7 +376,9 @@
             pointer-events: auto;
         }
 
-        /* SZKLANE OKIENKO */
+        /* =========================
+           SZKLANE OKIENKO
+        ========================= */
 
         .contact-box {
             position: relative;
@@ -426,7 +442,9 @@
             transform: translateY(0) scale(1);
         }
 
-        /* X */
+        /* =========================
+           X
+        ========================= */
 
         .close-contact {
             position: absolute;
@@ -455,7 +473,9 @@
                 0 2px 5px rgba(0, 0, 0, 0.4);
         }
 
-        /* TEKST KONTAKTU */
+        /* =========================
+           TEKST KONTAKTU
+        ========================= */
 
         .contact-box h2 {
             font-family: "Margarine", sans-serif;
@@ -523,7 +543,9 @@
             color: white;
         }
 
-        /* MOBILE */
+        /* =========================
+           MOBILE
+        ========================= */
 
         @media (max-width: 800px) {
 
@@ -575,6 +597,20 @@
                 font-size: 19px;
             }
 
+            .about {
+                padding: 60px 8% 80px;
+            }
+
+            .about h2 {
+                font-size: 32px;
+                margin-bottom: 40px;
+            }
+
+            .about p {
+                font-size: 17px;
+                line-height: 1.7;
+            }
+
             .area {
                 padding: 70px 7% 90px;
             }
@@ -586,20 +622,6 @@
 
             .area-card {
                 height: 270px;
-            }
-
-            .about {
-                padding: 60px 8% 90px;
-            }
-
-            .about h2 {
-                font-size: 32px;
-                margin-bottom: 40px;
-            }
-
-            .about p {
-                font-size: 17px;
-                line-height: 1.7;
             }
 
             .contact-box {
@@ -619,7 +641,9 @@
 
 <body>
 
-    <!-- HEADER -->
+    <!-- =========================
+         HEADER
+    ========================= -->
 
     <header>
 
@@ -652,7 +676,9 @@
     </header>
 
 
-    <!-- HERO -->
+    <!-- =========================
+         HERO
+    ========================= -->
 
     <section class="hero">
 
@@ -676,7 +702,31 @@
     </section>
 
 
-    <!-- OKOLICA -->
+    <!-- =========================
+         O NAS
+    ========================= -->
+
+    <section class="about">
+
+        <h2>
+            O nas
+        </h2>
+
+        <p>
+            Marzy Ci się spokojny wypoczynek w pobliżu atrakcji,
+            natury i zwierząt? Tatrzański Widok to miejsce dla Ciebie!
+            Oferujemy apartamenty z każdym zadbanym szczegółem,
+            ciepłe stylizacje i przytulność to nasza specjalność!
+            Na daną chwilę jesteśmy w trakcie tworzenia miejsca
+            marzeń dla Was ⭐
+        </p>
+
+    </section>
+
+
+    <!-- =========================
+         OKOLICA
+    ========================= -->
 
     <section class="area" id="okolica">
 
@@ -840,27 +890,9 @@
     </section>
 
 
-    <!-- O NAS -->
-
-    <section class="about">
-
-        <h2>
-            O nas
-        </h2>
-
-        <p>
-            Marzy Ci się spokojny wypoczynek w pobliżu atrakcji,
-            natury i zwierząt? Tatrzański Widok to miejsce dla Ciebie!
-            Oferujemy apartamenty z każdym zadbanym szczegółem,
-            ciepłe stylizacje i przytulność to nasza specjalność!
-            Na daną chwilę jesteśmy w trakcie tworzenia miejsca
-            marzeń dla Was ⭐
-        </p>
-
-    </section>
-
-
-    <!-- KONTAKT -->
+    <!-- =========================
+         KONTAKT
+    ========================= -->
 
     <div
         class="contact-modal"
