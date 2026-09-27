@@ -164,6 +164,154 @@
         }
 
         /* =========================
+           OKOLICA
+        ========================= */
+
+        .area {
+            padding: 100px 8% 120px;
+
+            background: #f7f7f7;
+
+            text-align: center;
+        }
+
+        .area h2 {
+            font-family: "Margarine", sans-serif;
+
+            font-size: 42px;
+            font-weight: normal;
+
+            margin: 0 0 55px;
+
+            color: #222;
+        }
+
+        .area-grid {
+            max-width: 1200px;
+
+            margin: 0 auto;
+
+            display: grid;
+
+            grid-template-columns: repeat(3, 1fr);
+
+            gap: 25px;
+        }
+
+        /* =========================
+           KAFELKI
+        ========================= */
+
+        .area-card {
+            position: relative;
+
+            height: 330px;
+
+            overflow: hidden;
+
+            border-radius: 18px;
+
+            text-decoration: none;
+
+            box-shadow:
+                0 10px 30px rgba(0, 0, 0, 0.15);
+
+            transition:
+                transform 0.3s ease,
+                box-shadow 0.3s ease;
+        }
+
+        .area-card:hover {
+            transform: translateY(-7px);
+
+            box-shadow:
+                0 18px 40px rgba(0, 0, 0, 0.22);
+        }
+
+        .area-card img {
+            position: absolute;
+
+            inset: 0;
+
+            width: 100%;
+            height: 100%;
+
+            object-fit: cover;
+
+            transition:
+                transform 0.5s ease;
+        }
+
+        .area-card:hover img {
+            transform: scale(1.08);
+        }
+
+        /* =========================
+           CIEMNY GRADIENT
+        ========================= */
+
+        .area-card::after {
+            content: "";
+
+            position: absolute;
+
+            inset: 0;
+
+            background:
+                linear-gradient(
+                    to top,
+                    rgba(0, 0, 0, 0.75),
+                    rgba(0, 0, 0, 0.05) 65%
+                );
+
+            z-index: 1;
+        }
+
+        /* =========================
+           TEKST NA KAFELKACH
+        ========================= */
+
+        .area-card-content {
+            position: absolute;
+
+            left: 25px;
+            right: 25px;
+            bottom: 25px;
+
+            z-index: 2;
+
+            text-align: left;
+
+            color: white;
+        }
+
+        .area-card-content h3 {
+            font-family: "Margarine", sans-serif;
+
+            font-size: 26px;
+            font-weight: normal;
+
+            margin: 0 0 7px;
+
+            text-shadow:
+                0 2px 7px rgba(0, 0, 0, 0.6);
+        }
+
+        .area-card-content p {
+            font-family: Georgia, serif;
+
+            font-size: 15px;
+            line-height: 1.5;
+
+            margin: 0;
+
+            color: rgba(255, 255, 255, 0.92);
+
+            text-shadow:
+                0 1px 5px rgba(0, 0, 0, 0.6);
+        }
+
+        /* =========================
            O NAS
         ========================= */
 
@@ -200,7 +348,7 @@
         }
 
         /* =========================
-           TŁO POD OKIENKIEM
+           TŁO KONTAKTU
         ========================= */
 
         .contact-modal {
@@ -237,7 +385,7 @@
         }
 
         /* =========================
-           PRAWDZIWE SZKŁO
+           SZKLANE OKIENKO
         ========================= */
 
         .contact-box {
@@ -248,16 +396,7 @@
 
             padding: 50px 45px;
 
-            /*
-            BARDZO PRZEZROCZYSTE TŁO
-            */
-
             background: rgba(255, 255, 255, 0.12);
-
-            /*
-            TO ROZMYWA TO,
-            CO ZNAJDUJE SIĘ ZA OKIENKIEM
-            */
 
             backdrop-filter: blur(25px) saturate(140%);
             -webkit-backdrop-filter: blur(25px) saturate(140%);
@@ -268,8 +407,7 @@
 
             box-shadow:
                 0 25px 70px rgba(0, 0, 0, 0.35),
-                inset 0 1px 1px rgba(255, 255, 255, 0.35),
-                inset 0 -1px 1px rgba(255, 255, 255, 0.08);
+                inset 0 1px 1px rgba(255, 255, 255, 0.35);
 
             overflow: hidden;
 
@@ -279,10 +417,6 @@
 
             transition: transform 0.25s ease;
         }
-
-        /*
-        DODATKOWA WARSTWA SZKŁA
-        */
 
         .contact-box::before {
             content: "";
@@ -307,10 +441,6 @@
             z-index: 0;
         }
 
-        /*
-        CAŁA TREŚĆ NAD WARSTWĄ SZKŁA
-        */
-
         .contact-box > * {
             position: relative;
             z-index: 1;
@@ -321,7 +451,7 @@
         }
 
         /* =========================
-           ZAMKNIĘCIE
+           X
         ========================= */
 
         .close-contact {
@@ -346,22 +476,13 @@
             font-family: Arial, sans-serif;
 
             font-size: 30px;
-            line-height: 1;
 
-            text-shadow: 0 2px 5px rgba(0, 0, 0, 0.4);
-
-            transition:
-                background 0.2s ease,
-                transform 0.2s ease;
-        }
-
-        .close-contact:hover {
-            background: rgba(255, 255, 255, 0.15);
-            transform: rotate(90deg);
+            text-shadow:
+                0 2px 5px rgba(0, 0, 0, 0.4);
         }
 
         /* =========================
-           TYTUŁ
+           TEKST KONTAKTU
         ========================= */
 
         .contact-box h2 {
@@ -387,14 +508,7 @@
             color: white;
 
             margin: 0 0 35px;
-
-            text-shadow:
-                0 2px 6px rgba(0, 0, 0, 0.4);
         }
-
-        /* =========================
-           POLA KONTAKTOWE
-        ========================= */
 
         .contact-details {
             display: flex;
@@ -414,19 +528,6 @@
             border: 1px solid rgba(255, 255, 255, 0.18);
 
             border-radius: 14px;
-
-            box-shadow:
-                inset 0 1px 1px rgba(255, 255, 255, 0.20);
-
-            transition:
-                background 0.2s ease,
-                transform 0.2s ease;
-        }
-
-        .contact-item:hover {
-            background: rgba(255, 255, 255, 0.16);
-
-            transform: translateY(-2px);
         }
 
         .contact-item h3 {
@@ -438,9 +539,6 @@
             margin: 0 0 8px;
 
             color: white;
-
-            text-shadow:
-                0 2px 5px rgba(0, 0, 0, 0.4);
         }
 
         .contact-item p {
@@ -451,14 +549,22 @@
             margin: 0;
 
             color: white;
-
-            text-shadow:
-                0 1px 5px rgba(0, 0, 0, 0.35);
         }
 
         /* =========================
            MOBILE
         ========================= */
+
+        @media (max-width: 800px) {
+
+            .area-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .area-card {
+                height: 280px;
+            }
+        }
 
         @media (max-width: 700px) {
 
@@ -499,6 +605,19 @@
                 font-size: 19px;
             }
 
+            .area {
+                padding: 70px 7% 90px;
+            }
+
+            .area h2 {
+                font-size: 32px;
+                margin-bottom: 40px;
+            }
+
+            .area-card {
+                height: 270px;
+            }
+
             .about {
                 padding: 60px 8% 90px;
             }
@@ -530,23 +649,27 @@
 
 <body>
 
-    <!-- HEADER -->
+    <!-- =========================
+         HEADER
+    ========================= -->
 
     <header>
 
         <div class="logo-box">
+
             <img
                 class="logo"
                 src="images/logo.png"
                 alt="Tatrzański Widok"
             >
+
         </div>
 
         <div class="nav-box">
 
             <nav>
 
-                <a href="#">
+                <a href="#okolica">
                     OKOLICA
                 </a>
 
@@ -561,7 +684,9 @@
     </header>
 
 
-    <!-- HERO -->
+    <!-- =========================
+         HERO
+    ========================= -->
 
     <section class="hero">
 
@@ -585,7 +710,175 @@
     </section>
 
 
-    <!-- O NAS -->
+    <!-- =========================
+         OKOLICA
+    ========================= -->
+
+    <section class="area" id="okolica">
+
+        <h2>
+            Okolica
+        </h2>
+
+        <div class="area-grid">
+
+            <!-- TATRY -->
+
+            <a class="area-card" href="#">
+
+                <img
+                    src="images/tatry.jpg"
+                    alt="Tatry"
+                >
+
+                <div class="area-card-content">
+
+                    <h3>
+                        Tatry
+                    </h3>
+
+                    <p>
+                        Górskie szlaki, niezwykłe widoki
+                        i tatrzańska przyroda.
+                    </p>
+
+                </div>
+
+            </a>
+
+
+            <!-- ZAKOPANE -->
+
+            <a class="area-card" href="#">
+
+                <img
+                    src="images/zakopane.jpg"
+                    alt="Zakopane"
+                >
+
+                <div class="area-card-content">
+
+                    <h3>
+                        Zakopane
+                    </h3>
+
+                    <p>
+                        Krupówki, Gubałówka i wyjątkowy
+                        klimat Podhala.
+                    </p>
+
+                </div>
+
+            </a>
+
+
+            <!-- TERMY -->
+
+            <a class="area-card" href="#">
+
+                <img
+                    src="images/termy.jpg"
+                    alt="Termy"
+                >
+
+                <div class="area-card-content">
+
+                    <h3>
+                        Termy
+                    </h3>
+
+                    <p>
+                        Relaks i odpoczynek po dniu
+                        spędzonym w górach.
+                    </p>
+
+                </div>
+
+            </a>
+
+
+            <!-- MORSKIE OKO -->
+
+            <a class="area-card" href="#">
+
+                <img
+                    src="images/morskie-oko.jpg"
+                    alt="Morskie Oko"
+                >
+
+                <div class="area-card-content">
+
+                    <h3>
+                        Morskie Oko
+                    </h3>
+
+                    <p>
+                        Jedno z najbardziej
+                        charakterystycznych miejsc Tatr.
+                    </p>
+
+                </div>
+
+            </a>
+
+
+            <!-- DOLINA KOŚCIELISKA -->
+
+            <a class="area-card" href="#">
+
+                <img
+                    src="images/dolina-koscieliska.jpg"
+                    alt="Dolina Kościeliska"
+                >
+
+                <div class="area-card-content">
+
+                    <h3>
+                        Dolina Kościeliska
+                    </h3>
+
+                    <p>
+                        Spokojne spacery wśród lasów,
+                        skał i górskiej przyrody.
+                    </p>
+
+                </div>
+
+            </a>
+
+
+            <!-- NOWY TARG -->
+
+            <a class="area-card" href="#">
+
+                <img
+                    src="images/nowy-targ.jpg"
+                    alt="Nowy Targ"
+                >
+
+                <div class="area-card-content">
+
+                    <h3>
+                        Nowy Targ
+                    </h3>
+
+                    <p>
+                        Lokalne atrakcje, restauracje,
+                        sklepy i klimat Podhala.
+                    </p>
+
+                </div>
+
+            </a>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         O NAS
+    ========================= -->
 
     <section class="about">
 
@@ -605,7 +898,9 @@
     </section>
 
 
-    <!-- KONTAKT -->
+    <!-- =========================
+         KONTAKT
+    ========================= -->
 
     <div
         class="contact-modal"
