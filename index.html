@@ -303,6 +303,174 @@
 
 
         /* =========================
+           OKIENKA KAFELKÓW
+        ========================= */
+
+        .place-modal {
+            position: fixed;
+            inset: 0;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            padding: 25px;
+
+            background: rgba(0, 0, 0, 0.48);
+
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+
+            z-index: 100;
+
+            opacity: 0;
+            visibility: hidden;
+            pointer-events: none;
+
+            transition:
+                opacity 0.25s ease,
+                visibility 0.25s ease;
+        }
+
+        .place-modal:target {
+            opacity: 1;
+            visibility: visible;
+            pointer-events: auto;
+        }
+
+
+        /* =========================
+           SZKLANE OKIENKO MIEJSCA
+        ========================= */
+
+        .place-box {
+            position: relative;
+
+            width: 100%;
+            max-width: 760px;
+
+            max-height: 90vh;
+
+            overflow: hidden;
+
+            background: rgba(255, 255, 255, 0.13);
+
+            backdrop-filter: blur(25px) saturate(140%);
+            -webkit-backdrop-filter: blur(25px) saturate(140%);
+
+            border: 1px solid rgba(255, 255, 255, 0.28);
+
+            border-radius: 22px;
+
+            box-shadow:
+                0 25px 80px rgba(0, 0, 0, 0.45),
+                inset 0 1px 1px rgba(255, 255, 255, 0.35);
+
+            transform: translateY(25px) scale(0.96);
+
+            transition: transform 0.25s ease;
+        }
+
+        .place-modal:target .place-box {
+            transform: translateY(0) scale(1);
+        }
+
+
+        /* =========================
+           ZDJĘCIE W OKIENKU
+        ========================= */
+
+        .place-image {
+            width: 100%;
+            height: 350px;
+
+            display: block;
+
+            object-fit: cover;
+        }
+
+
+        /* =========================
+           TREŚĆ OKIENKA
+        ========================= */
+
+        .place-content {
+            padding: 30px 35px 35px;
+
+            color: white;
+
+            text-align: left;
+        }
+
+        .place-content h2 {
+            font-family: "Margarine", sans-serif;
+
+            font-size: 34px;
+            font-weight: normal;
+
+            margin: 0 0 15px;
+
+            text-shadow:
+                0 2px 8px rgba(0, 0, 0, 0.45);
+        }
+
+        .place-content p {
+            font-family: Georgia, serif;
+
+            font-size: 18px;
+            line-height: 1.7;
+
+            margin: 0;
+
+            color: rgba(255, 255, 255, 0.95);
+
+            text-shadow:
+                0 1px 5px rgba(0, 0, 0, 0.4);
+        }
+
+
+        /* =========================
+           X W OKIENKU
+        ========================= */
+
+        .close-place {
+            position: absolute;
+
+            top: 15px;
+            right: 18px;
+
+            width: 42px;
+            height: 42px;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            border-radius: 50%;
+
+            background: rgba(0, 0, 0, 0.35);
+
+            color: white;
+
+            text-decoration: none;
+
+            font-family: Arial, sans-serif;
+            font-size: 30px;
+
+            z-index: 5;
+
+            transition:
+                background 0.2s ease,
+                transform 0.2s ease;
+        }
+
+        .close-place:hover {
+            background: rgba(0, 0, 0, 0.55);
+            transform: scale(1.08);
+        }
+
+
+        /* =========================
            MAPA NOWEGO TARGU
         ========================= */
 
@@ -376,7 +544,7 @@
 
 
         /* =========================
-           SZKLANE OKIENKO
+           SZKLANE OKIENKO KONTAKTU
         ========================= */
 
         .contact-box {
@@ -442,7 +610,7 @@
 
 
         /* =========================
-           X
+           X KONTAKTU
         ========================= */
 
         .close-contact {
@@ -571,6 +739,26 @@
                 height: 280px;
             }
 
+            .place-box {
+                max-height: 88vh;
+            }
+
+            .place-image {
+                height: 280px;
+            }
+
+            .place-content {
+                padding: 25px;
+            }
+
+            .place-content h2 {
+                font-size: 29px;
+            }
+
+            .place-content p {
+                font-size: 16px;
+            }
+
             .map-section {
                 padding: 70px 7% 80px;
             }
@@ -646,6 +834,31 @@
 
             .area-card {
                 height: 270px;
+            }
+
+            .place-modal {
+                padding: 15px;
+            }
+
+            .place-box {
+                border-radius: 18px;
+            }
+
+            .place-image {
+                height: 220px;
+            }
+
+            .place-content {
+                padding: 22px;
+            }
+
+            .place-content h2 {
+                font-size: 26px;
+            }
+
+            .place-content p {
+                font-size: 15px;
+                line-height: 1.6;
             }
 
             .map-section h2 {
@@ -778,7 +991,7 @@
 
             <!-- TATRY -->
 
-            <a class="area-card" href="#">
+            <a class="area-card" href="#miejsce-tatry">
 
                 <img
                     src="images/tatry.jpg"
@@ -803,7 +1016,7 @@
 
             <!-- ZAKOPANE -->
 
-            <a class="area-card" href="#">
+            <a class="area-card" href="#miejsce-zakopane">
 
                 <img
                     src="images/zakopane.jpeg"
@@ -828,7 +1041,7 @@
 
             <!-- TERMY -->
 
-            <a class="area-card" href="#">
+            <a class="area-card" href="#miejsce-termy">
 
                 <img
                     src="images/termy.jpg"
@@ -853,7 +1066,7 @@
 
             <!-- MORSKIE OKO -->
 
-            <a class="area-card" href="#">
+            <a class="area-card" href="#miejsce-morskie-oko">
 
                 <img
                     src="images/morskie-oko.jpg"
@@ -878,7 +1091,7 @@
 
             <!-- DOLINA KOŚCIELISKA -->
 
-            <a class="area-card" href="#">
+            <a class="area-card" href="#miejsce-dolina">
 
                 <img
                     src="images/dolina-koscieliska.jpg"
@@ -903,7 +1116,7 @@
 
             <!-- NOWY TARG -->
 
-            <a class="area-card" href="#">
+            <a class="area-card" href="#miejsce-nowy-targ">
 
                 <img
                     src="images/nowy-targ.jpeg"
@@ -928,7 +1141,7 @@
 
             <!-- GORCE -->
 
-            <a class="area-card" href="#">
+            <a class="area-card" href="#miejsce-gorce">
 
                 <img
                     src="images/gorce.jpg"
@@ -953,7 +1166,7 @@
 
             <!-- PIENINY -->
 
-            <a class="area-card" href="#">
+            <a class="area-card" href="#miejsce-pieniny">
 
                 <img
                     src="images/pieniny.jpg"
@@ -979,6 +1192,310 @@
         </div>
 
     </section>
+
+
+    <!-- =========================
+         OKIENKO - TATRY
+    ========================= -->
+
+    <div class="place-modal" id="miejsce-tatry">
+
+        <div class="place-box">
+
+            <a href="#okolica" class="close-place">
+                ×
+            </a>
+
+            <img
+                class="place-image"
+                src="images/tatry.jpg"
+                alt="Tatry"
+            >
+
+            <div class="place-content">
+
+                <h2>
+                    Tatry
+                </h2>
+
+                <p>
+                    Tatry to wyjątkowe miejsce dla miłośników gór,
+                    pieszych wędrówek i niezwykłych widoków.
+                    Liczne szlaki prowadzą przez malownicze doliny,
+                    lasy oraz wysokogórskie krajobrazy.
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- =========================
+         OKIENKO - ZAKOPANE
+    ========================= -->
+
+    <div class="place-modal" id="miejsce-zakopane">
+
+        <div class="place-box">
+
+            <a href="#okolica" class="close-place">
+                ×
+            </a>
+
+            <img
+                class="place-image"
+                src="images/zakopane.jpeg"
+                alt="Zakopane"
+            >
+
+            <div class="place-content">
+
+                <h2>
+                    Zakopane
+                </h2>
+
+                <p>
+                    Zakopane to jedno z najbardziej znanych miejsc
+                    na Podhalu. Krupówki, Gubałówka, górskie widoki
+                    oraz charakterystyczna architektura sprawiają,
+                    że miasto jest świetną bazą do odkrywania okolicy.
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- =========================
+         OKIENKO - TERMY
+    ========================= -->
+
+    <div class="place-modal" id="miejsce-termy">
+
+        <div class="place-box">
+
+            <a href="#okolica" class="close-place">
+                ×
+            </a>
+
+            <img
+                class="place-image"
+                src="images/termy.jpg"
+                alt="Termy"
+            >
+
+            <div class="place-content">
+
+                <h2>
+                    Termy
+                </h2>
+
+                <p>
+                    Termy to świetny sposób na odpoczynek po dniu
+                    spędzonym na górskich szlakach. Ciepłe baseny,
+                    strefy relaksu i widoki na góry pozwalają
+                    spokojnie się zregenerować.
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- =========================
+         OKIENKO - MORSKIE OKO
+    ========================= -->
+
+    <div class="place-modal" id="miejsce-morskie-oko">
+
+        <div class="place-box">
+
+            <a href="#okolica" class="close-place">
+                ×
+            </a>
+
+            <img
+                class="place-image"
+                src="images/morskie-oko.jpg"
+                alt="Morskie Oko"
+            >
+
+            <div class="place-content">
+
+                <h2>
+                    Morskie Oko
+                </h2>
+
+                <p>
+                    Morskie Oko to jedno z najbardziej
+                    charakterystycznych miejsc Tatr. Malownicze
+                    jezioro otoczone wysokimi szczytami tworzy
+                    wyjątkowy górski krajobraz.
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- =========================
+         OKIENKO - DOLINA KOŚCIELISKA
+    ========================= -->
+
+    <div class="place-modal" id="miejsce-dolina">
+
+        <div class="place-box">
+
+            <a href="#okolica" class="close-place">
+                ×
+            </a>
+
+            <img
+                class="place-image"
+                src="images/dolina-koscieliska.jpg"
+                alt="Dolina Kościeliska"
+            >
+
+            <div class="place-content">
+
+                <h2>
+                    Dolina Kościeliska
+                </h2>
+
+                <p>
+                    Dolina Kościeliska zachwyca spokojnymi szlakami,
+                    lasami, skałami i górską przyrodą. To świetne
+                    miejsce na dłuższy spacer i spokojne odkrywanie
+                    tatrzańskiego krajobrazu.
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- =========================
+         OKIENKO - NOWY TARG
+    ========================= -->
+
+    <div class="place-modal" id="miejsce-nowy-targ">
+
+        <div class="place-box">
+
+            <a href="#okolica" class="close-place">
+                ×
+            </a>
+
+            <img
+                class="place-image"
+                src="images/nowy-targ.jpeg"
+                alt="Nowy Targ"
+            >
+
+            <div class="place-content">
+
+                <h2>
+                    Nowy Targ
+                </h2>
+
+                <p>
+                    Nowy Targ to miasto położone w sercu Podhala.
+                    Znajdziesz tutaj restauracje, sklepy, lokalne
+                    atrakcje oraz wiele miejsc, w których można
+                    poczuć charakterystyczny klimat regionu.
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- =========================
+         OKIENKO - GORCE
+    ========================= -->
+
+    <div class="place-modal" id="miejsce-gorce">
+
+        <div class="place-box">
+
+            <a href="#okolica" class="close-place">
+                ×
+            </a>
+
+            <img
+                class="place-image"
+                src="images/gorce.jpg"
+                alt="Gorce"
+            >
+
+            <div class="place-content">
+
+                <h2>
+                    Gorce
+                </h2>
+
+                <p>
+                    Gorce oferują spokojne górskie szlaki, rozległe
+                    panoramy i piękną przyrodę. To doskonałe miejsce
+                    dla osób, które chcą odpocząć od bardziej
+                    zatłoczonych miejsc.
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- =========================
+         OKIENKO - PIENINY
+    ========================= -->
+
+    <div class="place-modal" id="miejsce-pieniny">
+
+        <div class="place-box">
+
+            <a href="#okolica" class="close-place">
+                ×
+            </a>
+
+            <img
+                class="place-image"
+                src="images/pieniny.jpg"
+                alt="Pieniny"
+            >
+
+            <div class="place-content">
+
+                <h2>
+                    Pieniny
+                </h2>
+
+                <p>
+                    Pieniny zachwycają malowniczymi szlakami,
+                    charakterystycznymi skałami i widokami na
+                    przełom Dunajca. To wyjątkowy region pełen
+                    górskich krajobrazów i natury.
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
 
 
     <!-- =========================
@@ -1024,17 +1541,14 @@
                 ×
             </a>
 
-
             <h2>
                 Kontakt
             </h2>
-
 
             <p class="contact-intro">
                 Masz pytania? Chcesz dowiedzieć się więcej
                 o naszych apartamentach? Skontaktuj się z nami!
             </p>
-
 
             <div class="contact-details">
 
@@ -1049,7 +1563,6 @@
                     </p>
 
                 </div>
-
 
                 <div class="contact-item">
 
