@@ -13,6 +13,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Margarine&display=swap" rel="stylesheet">
 
     <style>
+
         * {
             box-sizing: border-box;
         }
@@ -27,6 +28,7 @@
             background: white;
             font-family: Georgia, serif;
         }
+
 
         /* =========================
            HEADER
@@ -92,6 +94,7 @@
             opacity: 0.7;
         }
 
+
         /* =========================
            HERO
         ========================= */
@@ -139,6 +142,7 @@
             font-weight: normal;
         }
 
+
         /* =========================
            O NAS
         ========================= */
@@ -166,12 +170,13 @@
             color: #333;
         }
 
+
         /* =========================
            OKOLICA
         ========================= */
 
         .area {
-            padding: 90px 8% 120px;
+            padding: 90px 5% 120px;
             background: #f7f7f7;
             text-align: center;
         }
@@ -185,13 +190,14 @@
         }
 
         .area-grid {
-            max-width: 1200px;
+            max-width: 1400px;
             margin: 0 auto;
 
             display: grid;
-            grid-template-columns: repeat(3, 1fr);
+            grid-template-columns: repeat(4, 1fr);
             gap: 25px;
         }
+
 
         /* =========================
            KAFELKI
@@ -252,6 +258,7 @@
             z-index: 1;
         }
 
+
         /* =========================
            TEKST NA KAFELKACH
         ========================= */
@@ -294,6 +301,7 @@
                 0 1px 5px rgba(0, 0, 0, 0.6);
         }
 
+
         /* =========================
            MAPA NOWEGO TARGU
         ========================= */
@@ -328,6 +336,7 @@
             border: 0;
             display: block;
         }
+
 
         /* =========================
            KONTAKT - TŁO
@@ -364,6 +373,7 @@
             visibility: visible;
             pointer-events: auto;
         }
+
 
         /* =========================
            SZKLANE OKIENKO
@@ -430,6 +440,7 @@
             transform: translateY(0) scale(1);
         }
 
+
         /* =========================
            X
         ========================= */
@@ -459,6 +470,7 @@
             text-shadow:
                 0 2px 5px rgba(0, 0, 0, 0.4);
         }
+
 
         /* =========================
            TEKST KONTAKTU
@@ -530,6 +542,21 @@
             color: white;
         }
 
+
+        /* =========================
+           TABLET
+        ========================= */
+
+        @media (max-width: 1100px) {
+
+            .area-grid {
+                grid-template-columns: repeat(2, 1fr);
+                max-width: 900px;
+            }
+
+        }
+
+
         /* =========================
            MOBILE
         ========================= */
@@ -551,7 +578,9 @@
             .map-container {
                 height: 400px;
             }
+
         }
+
 
         @media (max-width: 700px) {
 
@@ -640,11 +669,14 @@
             .contact-intro {
                 font-size: 16px;
             }
+
         }
+
     </style>
 </head>
 
 <body>
+
 
     <!-- =========================
          HEADER
@@ -661,6 +693,7 @@
             >
 
         </div>
+
 
         <div class="nav-box">
 
@@ -739,7 +772,11 @@
             Okolica
         </h2>
 
+
         <div class="area-grid">
+
+
+            <!-- TATRY -->
 
             <a class="area-card" href="#">
 
@@ -764,6 +801,8 @@
             </a>
 
 
+            <!-- ZAKOPANE -->
+
             <a class="area-card" href="#">
 
                 <img
@@ -786,6 +825,8 @@
 
             </a>
 
+
+            <!-- TERMY -->
 
             <a class="area-card" href="#">
 
@@ -810,6 +851,8 @@
             </a>
 
 
+            <!-- MORSKIE OKO -->
+
             <a class="area-card" href="#">
 
                 <img
@@ -832,6 +875,8 @@
 
             </a>
 
+
+            <!-- DOLINA KOŚCIELISKA -->
 
             <a class="area-card" href="#">
 
@@ -856,6 +901,8 @@
             </a>
 
 
+            <!-- NOWY TARG -->
+
             <a class="area-card" href="#">
 
                 <img
@@ -877,6 +924,57 @@
                 </div>
 
             </a>
+
+
+            <!-- GORCE -->
+
+            <a class="area-card" href="#">
+
+                <img
+                    src="images/gorce.jpg"
+                    alt="Gorce"
+                >
+
+                <div class="area-card-content">
+
+                    <h3>
+                        Gorce
+                    </h3>
+
+                    <p>
+                        Górskie szlaki, rozległe widoki
+                        i spokojna górska przyroda.
+                    </p>
+
+                </div>
+
+            </a>
+
+
+            <!-- PIENINY -->
+
+            <a class="area-card" href="#">
+
+                <img
+                    src="images/pieniny.jpg"
+                    alt="Pieniny"
+                >
+
+                <div class="area-card-content">
+
+                    <h3>
+                        Pieniny
+                    </h3>
+
+                    <p>
+                        Malownicze szlaki, Dunajec
+                        i niezwykłe pienińskie krajobrazy.
+                    </p>
+
+                </div>
+
+            </a>
+
 
         </div>
 
@@ -926,14 +1024,17 @@
                 ×
             </a>
 
+
             <h2>
                 Kontakt
             </h2>
+
 
             <p class="contact-intro">
                 Masz pytania? Chcesz dowiedzieć się więcej
                 o naszych apartamentach? Skontaktuj się z nami!
             </p>
+
 
             <div class="contact-details">
 
@@ -967,6 +1068,7 @@
         </div>
 
     </div>
+
 
 </body>
 </html>
