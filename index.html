@@ -29,11 +29,6 @@
             font-family: Georgia, serif;
         }
 
-
-        /* =========================
-           HEADER
-        ========================= */
-
         header {
             position: absolute;
             top: 0;
@@ -94,10 +89,7 @@
             opacity: 0.7;
         }
 
-
-        /* =========================
-           HERO
-        ========================= */
+        /* HERO */
 
         .hero {
             position: relative;
@@ -142,10 +134,25 @@
             font-weight: normal;
         }
 
+        .typing-cursor {
+            display: inline-block;
+            margin-left: 3px;
+            animation: blink-cursor 0.8s infinite;
+        }
 
-        /* =========================
-           O NAS
-        ========================= */
+        @keyframes blink-cursor {
+            0%,
+            45% {
+                opacity: 1;
+            }
+
+            46%,
+            100% {
+                opacity: 0;
+            }
+        }
+
+        /* O NAS */
 
         .about {
             padding: 90px 15% 100px;
@@ -170,10 +177,7 @@
             color: #333;
         }
 
-
-        /* =========================
-           OKOLICA
-        ========================= */
+        /* OKOLICA */
 
         .area {
             padding: 90px 5% 120px;
@@ -198,10 +202,7 @@
             gap: 25px;
         }
 
-
-        /* =========================
-           KAFELKI
-        ========================= */
+        /* KAFELKI */
 
         .area-card {
             position: relative;
@@ -258,10 +259,7 @@
             z-index: 1;
         }
 
-
-        /* =========================
-           TEKST NA KAFELKACH
-        ========================= */
+        /* TEKST NA KAFELKACH */
 
         .area-card-content {
             position: absolute;
@@ -301,10 +299,7 @@
                 0 1px 5px rgba(0, 0, 0, 0.6);
         }
 
-
-        /* =========================
-           OKIENKA KAFELKÓW
-        ========================= */
+        /* OKIENKA KAFELKÓW */
 
         .place-modal {
             position: fixed;
@@ -338,10 +333,7 @@
             pointer-events: auto;
         }
 
-
-        /* =========================
-           SZKLANE OKIENKO MIEJSCA
-        ========================= */
+        /* SZKLANE OKIENKO */
 
         .place-box {
             position: relative;
@@ -375,11 +367,6 @@
             transform: translateY(0) scale(1);
         }
 
-
-        /* =========================
-           ZDJĘCIE W OKIENKU
-        ========================= */
-
         .place-image {
             width: 100%;
             height: 350px;
@@ -388,11 +375,6 @@
 
             object-fit: cover;
         }
-
-
-        /* =========================
-           TREŚĆ OKIENKA
-        ========================= */
 
         .place-content {
             padding: 30px 35px 35px;
@@ -427,11 +409,6 @@
             text-shadow:
                 0 1px 5px rgba(0, 0, 0, 0.4);
         }
-
-
-        /* =========================
-           X W OKIENKU
-        ========================= */
 
         .close-place {
             position: absolute;
@@ -469,10 +446,7 @@
             transform: scale(1.08);
         }
 
-
-        /* =========================
-           MAPA NOWEGO TARGU
-        ========================= */
+        /* MAPA */
 
         .map-section {
             padding: 90px 8% 100px;
@@ -505,10 +479,7 @@
             display: block;
         }
 
-
-        /* =========================
-           KONTAKT - TŁO
-        ========================= */
+        /* KONTAKT */
 
         .contact-modal {
             position: fixed;
@@ -541,11 +512,6 @@
             visibility: visible;
             pointer-events: auto;
         }
-
-
-        /* =========================
-           SZKLANE OKIENKO KONTAKTU
-        ========================= */
 
         .contact-box {
             position: relative;
@@ -608,11 +574,6 @@
             transform: translateY(0) scale(1);
         }
 
-
-        /* =========================
-           X KONTAKTU
-        ========================= */
-
         .close-contact {
             position: absolute;
 
@@ -638,11 +599,6 @@
             text-shadow:
                 0 2px 5px rgba(0, 0, 0, 0.4);
         }
-
-
-        /* =========================
-           TEKST KONTAKTU
-        ========================= */
 
         .contact-box h2 {
             font-family: "Margarine", sans-serif;
@@ -710,10 +666,7 @@
             color: white;
         }
 
-
-        /* =========================
-           TABLET
-        ========================= */
+        /* TABLET */
 
         @media (max-width: 1100px) {
 
@@ -724,10 +677,7 @@
 
         }
 
-
-        /* =========================
-           MOBILE
-        ========================= */
+        /* MOBILE */
 
         @media (max-width: 800px) {
 
@@ -768,7 +718,6 @@
             }
 
         }
-
 
         @media (max-width: 700px) {
 
@@ -890,10 +839,7 @@
 
 <body>
 
-
-    <!-- =========================
-         HEADER
-    ========================= -->
+    <!-- HEADER -->
 
     <header>
 
@@ -906,7 +852,6 @@
             >
 
         </div>
-
 
         <div class="nav-box">
 
@@ -927,9 +872,7 @@
     </header>
 
 
-    <!-- =========================
-         HERO
-    ========================= -->
+    <!-- HERO -->
 
     <section class="hero">
 
@@ -945,7 +888,7 @@
             </div>
 
             <div class="subtitle">
-                Jeszcze troche...
+                <span id="typing-text"></span><span class="typing-cursor">|</span>
             </div>
 
         </div>
@@ -953,9 +896,7 @@
     </section>
 
 
-    <!-- =========================
-         O NAS
-    ========================= -->
+    <!-- O NAS -->
 
     <section class="about">
 
@@ -975,9 +916,7 @@
     </section>
 
 
-    <!-- =========================
-         OKOLICA
-    ========================= -->
+    <!-- OKOLICA -->
 
     <section class="area" id="okolica">
 
@@ -985,11 +924,7 @@
             Okolica
         </h2>
 
-
         <div class="area-grid">
-
-
-            <!-- TATRY -->
 
             <a class="area-card" href="#miejsce-tatry">
 
@@ -1014,8 +949,6 @@
             </a>
 
 
-            <!-- ZAKOPANE -->
-
             <a class="area-card" href="#miejsce-zakopane">
 
                 <img
@@ -1038,8 +971,6 @@
 
             </a>
 
-
-            <!-- TERMY -->
 
             <a class="area-card" href="#miejsce-termy">
 
@@ -1064,8 +995,6 @@
             </a>
 
 
-            <!-- MORSKIE OKO -->
-
             <a class="area-card" href="#miejsce-morskie-oko">
 
                 <img
@@ -1088,8 +1017,6 @@
 
             </a>
 
-
-            <!-- DOLINA KOŚCIELISKA -->
 
             <a class="area-card" href="#miejsce-dolina">
 
@@ -1114,8 +1041,6 @@
             </a>
 
 
-            <!-- NOWY TARG -->
-
             <a class="area-card" href="#miejsce-nowy-targ">
 
                 <img
@@ -1138,8 +1063,6 @@
 
             </a>
 
-
-            <!-- GORCE -->
 
             <a class="area-card" href="#miejsce-gorce">
 
@@ -1164,8 +1087,6 @@
             </a>
 
 
-            <!-- PIENINY -->
-
             <a class="area-card" href="#miejsce-pieniny">
 
                 <img
@@ -1188,15 +1109,12 @@
 
             </a>
 
-
         </div>
 
     </section>
 
 
-    <!-- =========================
-         OKIENKO - TATRY
-    ========================= -->
+    <!-- TATRY -->
 
     <div class="place-modal" id="miejsce-tatry">
 
@@ -1232,9 +1150,7 @@
     </div>
 
 
-    <!-- =========================
-         OKIENKO - ZAKOPANE
-    ========================= -->
+    <!-- ZAKOPANE -->
 
     <div class="place-modal" id="miejsce-zakopane">
 
@@ -1270,9 +1186,7 @@
     </div>
 
 
-    <!-- =========================
-         OKIENKO - TERMY
-    ========================= -->
+    <!-- TERMY -->
 
     <div class="place-modal" id="miejsce-termy">
 
@@ -1308,9 +1222,7 @@
     </div>
 
 
-    <!-- =========================
-         OKIENKO - MORSKIE OKO
-    ========================= -->
+    <!-- MORSKIE OKO -->
 
     <div class="place-modal" id="miejsce-morskie-oko">
 
@@ -1346,9 +1258,7 @@
     </div>
 
 
-    <!-- =========================
-         OKIENKO - DOLINA KOŚCIELISKA
-    ========================= -->
+    <!-- DOLINA KOŚCIELISKA -->
 
     <div class="place-modal" id="miejsce-dolina">
 
@@ -1384,9 +1294,7 @@
     </div>
 
 
-    <!-- =========================
-         OKIENKO - NOWY TARG
-    ========================= -->
+    <!-- NOWY TARG -->
 
     <div class="place-modal" id="miejsce-nowy-targ">
 
@@ -1422,9 +1330,7 @@
     </div>
 
 
-    <!-- =========================
-         OKIENKO - GORCE
-    ========================= -->
+    <!-- GORCE -->
 
     <div class="place-modal" id="miejsce-gorce">
 
@@ -1460,9 +1366,7 @@
     </div>
 
 
-    <!-- =========================
-         OKIENKO - PIENINY
-    ========================= -->
+    <!-- PIENINY -->
 
     <div class="place-modal" id="miejsce-pieniny">
 
@@ -1498,9 +1402,7 @@
     </div>
 
 
-    <!-- =========================
-         MAPA NOWEGO TARGU
-    ========================= -->
+    <!-- MAPA -->
 
     <section class="map-section">
 
@@ -1522,9 +1424,7 @@
     </section>
 
 
-    <!-- =========================
-         KONTAKT
-    ========================= -->
+    <!-- KONTAKT -->
 
     <div
         class="contact-modal"
@@ -1582,6 +1482,34 @@
 
     </div>
 
+
+    <!-- ANIMACJA PISANIA -->
+
+    <script>
+
+        const typingText = document.getElementById("typing-text");
+
+        const textToType = "Jeszcze troche...";
+
+        let currentIndex = 0;
+
+        function typeText() {
+
+            if (currentIndex < textToType.length) {
+
+                typingText.textContent += textToType[currentIndex];
+
+                currentIndex++;
+
+                setTimeout(typeText, 90);
+
+            }
+
+        }
+
+        setTimeout(typeText, 500);
+
+    </script>
 
 </body>
 </html>
